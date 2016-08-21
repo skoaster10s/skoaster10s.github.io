@@ -718,6 +718,60 @@
 		margin: 0 0 _size(element-margin) 0;
 	}
 
+/* Form */
+
+	form {
+		label {
+			display: block;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="password"],
+		select,
+		textarea {
+			@include vendor('appearance', 'none');
+			@include vendor('transition', ('all 0.2s ease-in-out', 'color 0.2s ease-in-out'));
+			display: block;
+			width: 100%;
+			padding: 0.65em 0.75em;
+			background: none;
+			border: solid 2px rgba(185, 186, 187, 0.25);
+			color: inherit;
+			border-radius: 0.5em;
+			outline: none;
+
+			&:focus {
+				border-color: #9ac8e9;
+			}
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="password"] {
+			line-height: 1.35em;
+		}
+
+			line-height: 1.35em;
+		}
+
+		textarea {
+			min-height: 8em;
+		}
+
+		.formerize-placeholder,
+		::-webkit-input-placeholder,
+		:-moz-placeholder,
+		::-moz-placeholder,
+		:-ms-input-placeholder {
+			color: rgba(145, 146, 147, 0.85) !important;
+		}
+
+		::-moz-focus-inner {
+			border: 0;
+		}
+	}
+
 /* Table */
 
 	.table-wrapper {

@@ -2149,6 +2149,69 @@
 		margin: 0 0 2em 0;
 	}
 
+/* Form */
+
+	form label {
+		display: block;
+	}
+
+	form input[type="text"],
+	form input[type="email"],
+	form input[type="password"],
+	form select,
+	form textarea {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		-moz-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+		-webkit-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+		display: block;
+		width: 100%;
+		padding: 0.65em 0.75em;
+		background: none;
+		border: solid 2px rgba(185, 186, 187, 0.25);
+		color: inherit;
+		border-radius: 0.5em;
+		outline: none;
+	}
+
+		form input[type="text"]:focus,
+		form input[type="email"]:focus,
+		form input[type="password"]:focus,
+		form select:focus,
+		form textarea:focus {
+			border-color: #9ac8e9;
+		}
+
+	form input[type="text"],
+	form input[type="email"],
+	form input[type="password"] {
+		line-height: 1.35em;
+	}
+
+	form select {
+		line-height: 1.35em;
+	}
+
+	form textarea {
+		min-height: 8em;
+	}
+
+	form .formerize-placeholder,
+	form ::-webkit-input-placeholder,
+	form :-moz-placeholder,
+	form ::-moz-placeholder,
+	form :-ms-input-placeholder {
+		color: rgba(145, 146, 147, 0.85) !important;
+	}
+
+	form ::-moz-focus-inner {
+		border: 0;
+	}
+
 /* Table */
 
 	.table-wrapper {
@@ -3818,7 +3881,7 @@
 		background-color: rgba(29, 36, 42, 0.9);
 	}
 
-	body.is-mobile.landing #page-wrapper {
+	body.is-mobile.landing #page-wapper {
 		background: none;
 	}
 
