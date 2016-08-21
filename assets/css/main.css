@@ -3697,6 +3697,30 @@
 		background-attachment: scroll;
 	}
 
+/* Contact */
+
+	#contact {
+		padding-bottom: 0;
+		overflow: hidden;
+	}
+
+		#contact .box {
+			-moz-transition: all 1s ease;
+			-webkit-transition: all 1s ease;
+			-ms-transition: all 1s ease;
+			transition: all 1s ease;
+			-moz-transform: translateZ(0);
+			-webkit-transform: translateZ(0);
+			-ms-transform: translateZ(0);
+			transform: translateZ(0);
+			position: relative;
+			bottom: 0;
+		}
+
+		#contact.inactive .box {
+			bottom: -30em;
+		}
+
 /* Footer */
 
 	#footer {
