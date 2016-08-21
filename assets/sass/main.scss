@@ -1723,6 +1723,26 @@
 		}
 	}
 
+/* Contact */
+
+	#contact {
+		padding-bottom: 0;
+		overflow: hidden;
+
+		.box {
+			@include vendor('transition', 'all 1s ease');
+			@include vendor('transform', 'translateZ(0)');
+			position: relative;
+			bottom: 0;
+		}
+
+		&.inactive {
+			.box {
+				bottom: -30em;
+			}
+		}
+	}
+
 /* Footer */
 
 	#footer {
