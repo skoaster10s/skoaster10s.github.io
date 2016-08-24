@@ -134,61 +134,45 @@
                     <div class="box container 75%">
 
                     <!-- Contact Form -->
-                            <form id="contact" method="post" action="">
-                                <div class="row 50%">
-                                    <div class="6u 12u(mobile)"><input id="name" type="text" name="name" placeholder="Name" required="" /></div>
-                                    <div class="6u 12u(mobile)"><input id="email" type="email" name="email" placeholder="Email" required/></div>
+                        <form id="contact" method="post" action="#">
+                            <div class="row 50%">
+                                <div class="6u 12u(mobile)">
+                                    <input id="name" type="text" name="name" placeholder="Your Name *" required data-validation-required-message="Please enter your name."/>
                                 </div>
-                                <div class="row 50%">
-                                    <div class="12u"><textarea id = "message" name="message" placeholder="Message" rows="6" required></textarea></div>
+                                <div class="6u 12u(mobile)">
+                                    <input id="email" type="email" name="email" placeholder="Your Email*" required data-validation-required-message="Please enter your name."/>
                                 </div>
-                                <div class="row">
-                                    <div class="12u">
-                                        <ul class="actions">
-                                            <li><input type="submit" value="Send Message" /></li>
-                                        </ul>
-                                    </div>
-                                    <div id="form-messages"></div>
+                            </div>
+                            <div class="row 50%">
+                                <div class="12u">
+                                    <textarea id = "message" name="message" placeholder="Your Message *" rows="6" required data-validation-required-message="Please enter your name."></textarea>
                                 </div>
-                            </form>
-
-
-                            <form method="post" action="#">
-                                <div class="row uniform">
-                                    <div class="6u 12u$(xsmall)">
-                                        <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-                                    </div>
-                                    <div class="6u$ 12u$(xsmall)">
-                                        <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-                                    </div>
-                                    <div class="12u$">
-                                        <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-                                    </div>
-                                    <div class="12u$">
-                                        <ul class="actions">
-                                            <li><input type="submit" value="Send Message" class="special" /></li>
-                                        </ul>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="12u">
+                                    <ul class="actions">
+                                        <div id="success"></div>
+                                        <li><input type="submit" value="Send Message" /></li>
+                                    </ul>
                                 </div>
-                            </form>
-
+                            </div>
+                        </form>
                     </div>
-                    <ul class="icons">
-                        <li><i class="icon fa-linkedin-square"></i>
-                        <a href="https://www.linkedin.com/in/sean-ko-7544a767">LinkedIn</a></li> <br />
-                        <li><i class="icon fa-github"></i>
-                        <a href="https://github.com/skoaster10s" >@skoaster10s</a></li> <br />
-                        <li><i class="icon fa-phone"></i></li> <br />
-                        <li><i class="icon fa-envelope-o"></i>
-                        <a href="mailto:seanko@mit.edu">seanko@mit.edu</a></li> <br />
-                    </ul>
                 </div>
 
             </section>
 
 				<!-- Footer -->
 					<footer id="footer">
-
+                        <ul class="icons">
+                            <li><i class="icon fa-linkedin-square"></i>
+                            <a href="https://www.linkedin.com/in/sean-ko-7544a767">LinkedIn</a></li> <br />
+                            <li><i class="icon fa-github"></i>
+                            <a href="https://github.com/skoaster10s" >@skoaster10s</a></li> <br />
+                            <li><i class="icon fa-phone"></i></li> <br />
+                            <li><i class="icon fa-envelope-o"></i>
+                            <a href="mailto:seanko@mit.edu">seanko@mit.edu</a></li> <br />
+                         </ul>
 						<ul class="copyright">
 							<li>&copy; 2016 Sean Ko</li>
                             <li>All rights reserved.</li>
@@ -207,6 +191,10 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
             <script src="assets/js/app.js"></script>
+
+            <!-- Contact Form JavaScript -->
+            <script src="assets/contact/jqBootstrapValidation.js"></script>
+            <script src="assets/contact/contact_me.js"></script>
 
 	</body>
 </html>
