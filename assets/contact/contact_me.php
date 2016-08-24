@@ -1,38 +1,56 @@
 <?php
 
-// Check for empty fields
-if(empty($_POST['name'])      ||
-   empty($_POST['email'])     ||
-   empty($_POST['message'])   ||
-   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
-   {
-   echo "No arguments Provided!";
-   return false;
-   }
-   
-$name = strip_tags(htmlspecialchars($_POST['name']));
-$email_address = strip_tags(htmlspecialchars($_POST['email']));
-$message = strip_tags(htmlspecialchars($_POST['message']));
-   
-// Create the email and send the message
-$to = 'seanko@mit.edu';
-$email_subject = "Website Contact Form:  $name";
-$email_body .= "You have received a new message from your website contact form.\n\n";
-$email_body .= "Here are the details:\n\n";
+$errorMSG = "";
 
-$email_body .= "Name: ";
-$email_body .=  $name;
-$email_body .= "\n\n";
+// NAME
+if (empty($_POST["name"])) {
+    $errorMSG = "Name is required ";
+} else {
+    $name = $_POST["name"];
+}
 
-$email_body .= "Email: ";
-$email_body .= $email_address;
-$email_body .=  "\n\n";
+// EMAIL
+if (empty($_POST["email"])) {
+    $errorMSG .= "Email is required ";
+} else {
+    $email = $_POST["email"];
+}
 
-$email_body .= "Message:\n";
-$email_body .= $message;
+// MESSAGE
+if (empty($_POST["message"])) {
+    $errorMSG .= "Message is required ";
+} else {
+    $message = $_POST["message"];
+}
 
-$headers = "From: noreply@skoaster10s.github.io\n";
-$headers .= "Reply-To: $email_address";
-mail($to,$email_subject,$email_body,$headers);
-return true;         
+
+$EmailTo = "seanko@mit.edu";
+$Subject = "New Message Received";
+
+// prepare email body text
+$Body = "";
+$Body .= "Name: ";
+$Body .= $name;
+$Body .= "\n";
+$Body .= "Email: ";
+$Body .= $email;
+$Body .= "\n";
+$Body .= "Message: ";
+$Body .= $message;
+$Body .= "\n";
+
+// send email
+$success = mail($EmailTo, $Subject, $Body, "From:".$email);
+
+// redirect to success page
+if ($success && $errorMSG == ""){
+   echo "success";
+}else{
+    if($errorMSG == ""){
+        echo "Something went wrong :(";
+    } else {
+        echo $errorMSG;
+    }
+}
+
 ?>
