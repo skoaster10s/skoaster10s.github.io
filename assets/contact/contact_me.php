@@ -17,13 +17,22 @@ $message = strip_tags(htmlspecialchars($_POST['message']));
 // Create the email and send the message
 $to = 'seanko@mit.edu';
 $email_subject = "Website Contact Form:  $name";
-$email_body = "You have received a new message from your website contact form.\n\n".
-			"Here are the details:\n\n
-			Name: $name\n\n
-			Email: $email_address\n\n
-			Message:\n$message";
+$email_body .= "You have received a new message from your website contact form.\n\n";
+$email_body .= "Here are the details:\n\n";
+
+$email_body .= "Name: ";
+$email_body .=  $name;
+$email_body .= "\n\n";
+
+$email_body .= "Email: ";
+$email_body .= $email_address;
+$email_body .=  "\n\n";
+
+$email_body .= "Message:\n";
+$email_body .= $message;
+
 $headers = "From: noreply@skoaster10s.github.io\n";
-$headers .= "Reply-To: $email_address";   
+$headers .= "Reply-To: $email_address";
 mail($to,$email_subject,$email_body,$headers);
 return true;         
 ?>
