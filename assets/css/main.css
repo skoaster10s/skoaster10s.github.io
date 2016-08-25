@@ -2078,23 +2078,61 @@
 		top: -125%;
 	}
 
-	#myProgress {
+	#progressContainer {
 	    position: relative;
 	    width: 750px;
-	    height: 40px;
-	    background-color: grey;
+	    height: 30px;
+	    background-color: white;
 	}
-	#myBar {
-	    position: absolute;
-	    width: 85%;
-	    height: 100%;
-	    background-color: green;
-	}
+
 	#label {
 	    text-align: center; /* If you want to center it */
 	    line-height: 40px; /* Set the line-height to the same as the height of the progress bar container, to center it vertically */
 	    color: white;
 	}
+
+	#barPython {
+	    position: absolute;
+	    width: 85%;
+	    height: 100%;
+	    background-color: #a6a6a6;
+	}
+
+	#barJava {
+	    position: absolute;
+	    width: 60%;
+	    height: 100%;
+	    background-color: #a6a6a6;
+	}
+
+	#barCC {
+	    position: absolute;
+	    width: 50%;
+	    height: 100%;
+	    background-color: #a6a6a6;
+	}
+
+	#barHCJ {
+	    position: absolute;
+	    width: 40%;
+	    height: 100%;
+	    background-color: #a6a6a6;
+	}
+
+	#barMatlab {
+	    position: absolute;
+	    width: 40%;
+	    height: 100%;
+	    background-color: #a6a6a6;
+	}
+
+	#barR {
+	    position: absolute;
+	    width: 25%;
+	    height: 100%;
+	    background-color: #a6a6a6;
+	}
+
 
 /* Box */
 
