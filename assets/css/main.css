@@ -2080,7 +2080,7 @@
 
 	#progressContainer {
 	    position: relative;
-	    width: 100%;
+	    width: 300%;
 	    height: 30px;
 	    background-color: white;
 	}
