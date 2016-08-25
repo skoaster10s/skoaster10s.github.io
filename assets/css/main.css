@@ -2087,7 +2087,7 @@
 
 	#label {
 	    text-align: center; /* If you want to center it */
-	    line-height: 40px; /* Set the line-height to the same as the height of the progress bar container, to center it vertically */
+	    line-height: 30px; /* Set the line-height to the same as the height of the progress bar container, to center it vertically */
 	    color: white;
 	}
 
