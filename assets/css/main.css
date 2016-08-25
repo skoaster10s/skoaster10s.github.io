@@ -2037,11 +2037,12 @@
 	#progressContainer {
 	    position: relative;
 	    padding: 50px 20px 50px 20px;
+	    line-height: 30px;
 	    background-color: white;
 	}
 
 	#label {
-	    text-align: center; /* If you want to center it */
+	    text-align: center;
 	    line-height: 30px; /* Set the line-height to the same as the height of the progress bar container, to center it vertically */
 	    color: white;
 	}
@@ -2397,69 +2398,6 @@
 		margin: 0 0 2em 0;
 	}
 
-/* Form */
-
-	form label {
-		display: block;
-	}
-
-	form input[type="text"],
-	form input[type="email"],
-	form input[type="password"],
-	form select,
-	form textarea {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		-moz-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
-		-webkit-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
-		-ms-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
-		transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
-		display: block;
-		width: 100%;
-		padding: 0.65em 0.75em;
-		background: none;
-		border: solid 2px rgba(185, 186, 187, 0.25);
-		color: inherit;
-		border-radius: 0.5em;
-		outline: none;
-	}
-
-		form input[type="text"]:focus,
-		form input[type="email"]:focus,
-		form input[type="password"]:focus,
-		form select:focus,
-		form textarea:focus {
-			border-color: #9ac8e9;
-		}
-
-	form input[type="text"],
-	form input[type="email"],
-	form input[type="password"] {
-		line-height: 1.35em;
-	}
-
-	form select {
-		line-height: 1.35em;
-	}
-
-	form textarea {
-		min-height: 8em;
-	}
-
-	form .formerize-placeholder,
-	form ::-webkit-input-placeholder,
-	form :-moz-placeholder,
-	form ::-moz-placeholder,
-	form :-ms-input-placeholder {
-		color: rgba(145, 146, 147, 0.85) !important;
-	}
-
-	form ::-moz-focus-inner {
-		border: 0;
-	}
-
 /* Table */
 
 	.table-wrapper {
@@ -2506,27 +2444,36 @@
 			border-collapse: separate;
 		}
 
-			table.alt tbody tr td {
-				border: solid 1px #fff;
-				border-left-width: 0;
-				border-top-width: 0;
+		table.alt tbody tr td {
+			border: solid 1px #fff;
+			border-left-width: 0;
+			border-top-width: 0;
+		}
+
+			table.alt tbody tr td:first-child {
+				border-left-width: 1px;
 			}
 
-				table.alt tbody tr td:first-child {
-					border-left-width: 1px;
-				}
+		table.alt tbody tr:first-child td {
+			border-top-width: 1px;
+		}
 
-			table.alt tbody tr:first-child td {
-				border-top-width: 1px;
-			}
+		table.alt thead {
+			border-bottom: 0;
+		}
 
-			table.alt thead {
-				border-bottom: 0;
-			}
+		table.alt tfoot {
+			border-top: 0;
+		}
 
-			table.alt tfoot {
-				border-top: 0;
-			}
+		table.progressSkills col:first-child{
+			width: 40%;
+		}
+
+		table.progressSkills col:last-child{
+			width: 60%;
+		}
+
 
 /* Button */
 
