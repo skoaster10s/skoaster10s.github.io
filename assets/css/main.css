@@ -2078,6 +2078,15 @@
 		top: -125%;
 	}
 
+	p[data-value] { 
+		position: relative; 
+	}
+
+	p[data-value]:after {
+		content: attr(data-value) '%';
+		position: absolute; right:0;
+	}
+
 /* Box */
 
 	.box {
