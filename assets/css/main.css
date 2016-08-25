@@ -2039,8 +2039,8 @@
 		-webkit-appearance: none;
 		appearance: none;
 
-		width: 250px;
-		height: 20px;
+		width: 750px;
+		height: 50px;
 	}
 
 	progress[value]::-webkit-progress-bar {
@@ -2069,6 +2069,13 @@
 
 	@keyframes animate-stripes {
 		100% { background-position: -100px 0px; }
+	}
+
+	progress[value]::-webkit-progress-value::before {
+		content: attr(value);
+		position: absolute;
+		right: 0;
+		top: -125%;
 	}
 
 /* Box */
