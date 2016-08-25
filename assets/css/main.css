@@ -2036,7 +2036,7 @@
 
 	#progressContainer {
 	    position: relative;
-	    width: 100%;
+	    width: 650px;
 	    height: 30px;
 	    background-color: white;
 	}
@@ -2399,14 +2399,6 @@
 	}
 
 /* Table */
-
-	table.progressSkills col:first-child{
-		width: 40%;
-	}
-
-	table.progressSkills col:last-child{
-		width: 60%;
-	}
 
 	.table-wrapper {
 		-webkit-overflow-scrolling: touch;
