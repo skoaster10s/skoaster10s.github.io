@@ -2036,8 +2036,7 @@
 
 	#progressContainer {
 	    position: relative;
-	    padding: 50px 20px 50px 20px;
-	    line-height: 30px;
+	    padding: 0px 80px 0px 80px;
 	    background-color: white;
 	}
 
