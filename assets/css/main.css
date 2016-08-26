@@ -2049,7 +2049,7 @@
 
 	#barPython {
 	    position: absolute;
-	    width: 80%;
+	    width: 77%;
 	    height: 100%;
 	    background-color: #E0F900;
 	}
@@ -2063,14 +2063,14 @@
 
 	#barCC {
 	    position: absolute;
-	    width: 50%;
+	    width: 45%;
 	    height: 100%;
 	    background-color: #FFBF00;
 	}
 
 	#barHCJ {
 	    position: absolute;
-	    width: 40%;
+	    width: 45%;
 	    height: 100%;
 	    background-color: #FFA500;
 	}
