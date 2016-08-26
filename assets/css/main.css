@@ -2049,16 +2049,16 @@
 
 	#barPython {
 	    position: absolute;
-	    width: 85%;
+	    width: 80%;
 	    height: 100%;
-	    background-color: #BFF200;
+	    background-color: #E0F900;
 	}
 
 	#barJava {
 	    position: absolute;
 	    width: 60%;
 	    height: 100%;
-	    background-color: #FFD700;
+	    background-color: #FFED00;
 	}
 
 	#barCC {
