@@ -2183,6 +2183,9 @@
 		}
 
 /* Image */
+	img.profile-rnd {
+		border-radius: 30%;
+	}
 
 	.image {
 		border-radius: 3px;
