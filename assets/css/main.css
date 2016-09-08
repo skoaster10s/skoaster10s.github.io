@@ -2051,49 +2051,49 @@
 	    position: absolute;
 	    width: 77%;
 	    height: 100%;
-	    background-color: #E0F900;
+	    background-color: #a6a6a6;
 	}
 
 	#barJava {
 	    position: absolute;
 	    width: 60%;
 	    height: 100%;
-	    background-color: #FFED00;
+	    background-color: #a6a6a6;
 	}
 
 	#barCC {
 	    position: absolute;
 	    width: 45%;
 	    height: 100%;
-	    background-color: #FFBF00;
+	    background-color: #a6a6a6;
 	}
 
 	#barHCJ {
 	    position: absolute;
 	    width: 45%;
 	    height: 100%;
-	    background-color: #FFA500;
+	    background-color: #a6a6a6;
 	}
 
 	#barMatlab {
 	    position: absolute;
 	    width: 40%;
 	    height: 100%;
-	    background-color: #FFA500;
+	    background-color: #a6a6a6;
 	}
 
 	#barR {
 	    position: absolute;
 	    width: 25%;
 	    height: 100%;
-	    background-color: #FF6437;
+	    background-color: #a6a6a6;
 	}
 
 	#barMySQL {
 	    position: absolute;
 	    width: 20%;
 	    height: 100%;
-	    background-color: #FF6437;
+	    background-color: #a6a6a6;
 	}
 
 /* Box */
