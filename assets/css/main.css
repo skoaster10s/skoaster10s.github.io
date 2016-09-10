@@ -2233,12 +2233,12 @@
 
 	#healthyWake {
 		background-image: url("../../images/healthyWake.jpg");
-		background-size: 50% 50%;
+		background-size: 100% 100%;
 	}
 
 	#tennisTracker {
 		background-image: url("../../images/tennisTracker.jpg");
-		background-size: 50% 50%;
+		background-size: 100% 100%;
 	}
 
 	ol {
