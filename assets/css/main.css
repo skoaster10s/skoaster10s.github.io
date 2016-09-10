@@ -2232,11 +2232,13 @@
 /* List */
 
 	#healthyWake {
-		background-image: url("https://hd.unsplash.com/photo-1463740839922-2d3b7e426a56");
+		background-image: url("../../images/healthyWake.jpg");
+		background-size: 50% 50%;
 	}
 
 	#tennisTracker {
 		background-image: url("../../images/tennisTracker.jpg");
+		background-size: 50% 50%;
 	}
 
 	ol {
