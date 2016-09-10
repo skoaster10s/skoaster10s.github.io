@@ -2231,12 +2231,12 @@
 
 /* List */
 
-	#healthyWake {
+	#healthyWake:hover {
 		background-image: url("../../images/healthyWake.jpg");
 		background-size: 100% 100%;
 	}
 
-	#tennisTracker {
+	#tennisTracker:hover {
 		background-image: url("../../images/tennisTracker.jpg");
 		background-size: 100% 100%;
 	}
