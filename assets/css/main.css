@@ -2234,18 +2234,16 @@
 
 	#healthyContent {
 		visibility: hidden;
-		position: absolute;
-		left: -100px;
 		background: rgba(153,204,255,  0.7);
-		transition: 1s;
+		transition: visibility 1s ease-in-out;
 	}
 
 	#tennisContent {
 		visibility: hidden;
 		position: absolute;
 		left: -100px;
-		background: rgba(153,204,255,  0.7);
-		transition: 1s;
+		background: rgba(102,255,153,  0.7);
+		transition: 1s ease-in-out;
 	}
 
 	#healthyWake {
@@ -2259,13 +2257,11 @@
 	}
 
 	#healthyWake:hover #healthyContent {
-		transition: 1s;
-		left: 0;
+		visibility: visible;
 	}
 
 	#tennisTracker:hover #tennisContent {
 		visibility: visible;
-		transition: 1s;
 		left: 0;
 	}
 
