@@ -2035,65 +2035,65 @@
 /* Progress Bars*/
 
 	#progressContainer {
-	    position: relative;
-	    width: 100%;
-	    height: 30px;
-	    background-color: white;
+		position: relative;
+		width: 100%;
+		height: 30px;
+		background-color: white;
 	}
 
 	#label {
-	    text-align: center;
-	    line-height: 30px; /* Set the line-height to the same as the height of the progress bar container, to center it vertically */
-	    color: white;
+		text-align: center;
+		line-height: 30px; /* Set the line-height to the same as the height of the progress bar container, to center it vertically */
+		color: white;
 	}
 
 	#barPython {
-	    position: absolute;
-	    width: 77%;
-	    height: 100%;
-	    background-color: #a6a6a6;
+		position: absolute;
+		width: 77%;
+		height: 100%;
+		background-color: #a6a6a6;
 	}
 
 	#barJava {
-	    position: absolute;
-	    width: 60%;
-	    height: 100%;
-	    background-color: #a6a6a6;
+		position: absolute;
+		width: 60%;
+		height: 100%;
+		background-color: #a6a6a6;
 	}
 
 	#barCC {
-	    position: absolute;
-	    width: 45%;
-	    height: 100%;
-	    background-color: #a6a6a6;
+		position: absolute;
+		width: 45%;
+		height: 100%;
+		background-color: #a6a6a6;
 	}
 
 	#barHCJ {
-	    position: absolute;
-	    width: 45%;
-	    height: 100%;
-	    background-color: #a6a6a6;
+		position: absolute;
+		width: 45%;
+		height: 100%;
+		background-color: #a6a6a6;
 	}
 
 	#barMatlab {
-	    position: absolute;
-	    width: 40%;
-	    height: 100%;
-	    background-color: #a6a6a6;
+		position: absolute;
+		width: 40%;
+		height: 100%;
+		background-color: #a6a6a6;
 	}
 
 	#barR {
-	    position: absolute;
-	    width: 25%;
-	    height: 100%;
-	    background-color: #a6a6a6;
+		position: absolute;
+		width: 25%;
+		height: 100%;
+		background-color: #a6a6a6;
 	}
 
 	#barMySQL {
-	    position: absolute;
-	    width: 20%;
-	    height: 100%;
-	    background-color: #a6a6a6;
+		position: absolute;
+		width: 20%;
+		height: 100%;
+		background-color: #a6a6a6;
 	}
 
 /* Box */
@@ -2229,17 +2229,42 @@
 				width: 100%;
 			}
 
-/* List */
 
-	#healthyWake:hover {
+/* Projects List */
+
+	#slideContent {
+		position: absolute;
+		left: -100px;
+		width: 100px;
+		height: 100px;
+		background: blue;
+		transition: 1s;
+	}
+
+	#healthyWake {
 		background-image: url("../../images/healthyWake.jpg");
 		background-size: 100% 100%;
 	}
 
-	#tennisTracker:hover {
+	#tennisTracker {
 		background-image: url("../../images/tennisTracker.jpg");
 		background-size: 100% 100%;
 	}
+
+	#healthyWake:hover #slideContent {
+		transition: 1s;
+		left: 0;
+	}
+
+	#tennisTracker:hover #slideContent {
+		transition: 1s;
+		left: 0;
+	}
+
+
+/* List */
+
+
 
 	ol {
 		list-style: decimal;
