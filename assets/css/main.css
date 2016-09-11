@@ -2233,10 +2233,9 @@
 /* Projects List */
 
 	#slideContent {
+		visibility: hidden;
 		position: absolute;
 		left: -100px;
-		width: 100px;
-		height: 100px;
 		background: blue;
 		transition: 1s;
 	}
@@ -2257,6 +2256,7 @@
 	}
 
 	#tennisTracker:hover #slideContent {
+		visibility: visible;
 		transition: 1s;
 		left: 0;
 	}
