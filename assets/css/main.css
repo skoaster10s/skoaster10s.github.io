@@ -2233,27 +2233,30 @@
 /* Projects List */
 
 	#healthyContent {
+		padding: 10px 10px;
 		visibility: hidden;
 		background: rgba(153,204,255,  0.7);
-		transition: visibility 1s ease-in-out;
+		-webkit-transition: visibility 0.5s ease-in-out;
+		transition: visibility 0.5s ease-out;
 	}
 
 	#tennisContent {
+		padding: 10px 10px;
 		visibility: hidden;
-		position: absolute;
-		left: -100px;
 		background: rgba(102,255,153,  0.7);
-		transition: 1s ease-in-out;
+		transition: visibility 1s ease-out;
 	}
 
 	#healthyWake {
 		background-image: url("../../images/healthyWake.jpg");
 		background-size: 100% 100%;
+		height: 50%;
 	}
 
 	#tennisTracker {
 		background-image: url("../../images/tennisTracker.jpg");
 		background-size: 100% 100%;
+		height: 50%;
 	}
 
 	#healthyWake:hover #healthyContent {
@@ -2262,7 +2265,14 @@
 
 	#tennisTracker:hover #tennisContent {
 		visibility: visible;
-		left: 0;
+	}
+
+	#healthyWake:hover {
+		height: 100%;
+	}
+
+	#tennisTracker:hover {
+		height: 100%;
 	}
 
 
