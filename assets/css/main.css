@@ -2234,9 +2234,9 @@
 
 	#healthyContent {
 		border-radius: 5px;
-		margin: 10% 10% 10% 10%;
-		background: rgba(153, 204, 255,  0.7);
-		max-height: 0;
+		margin: 50% 50% 50% 50%;
+/*		background: rgba(153, 204, 255,  0.7);
+*/		max-height: 0;
 		overflow: hidden;
 
 		-webkit-transition: max-height 0.8s;
