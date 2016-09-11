@@ -2248,6 +2248,17 @@
 
 	}
 
+	#arduinoContent {
+		border-radius: 5px;
+		background: rgba(102, 255, 153,  0.7);
+		max-height: 0;
+		overflow: hidden;
+
+		-webkit-transition: max-height 0.8s;
+		-moz-transition: max-height 0.8s;
+		transition: max-height 0.8s;
+	}
+
 	#tennisContent {
 		border-radius: 5px;
 		background: rgba(102, 255, 153,  0.7);
@@ -2271,6 +2282,10 @@
 	}
 
 	#healthyWake:hover #healthyContent {
+		max-height: 300px;
+	}
+
+	#arduinoWave:hover #arduinoContent {
 		max-height: 200px;
 	}
 
