@@ -2232,11 +2232,19 @@
 
 /* Projects List */
 
-	#slideContent {
+	#healthyContent {
 		visibility: hidden;
 		position: absolute;
 		left: -100px;
-		background: blue;
+		background: rgba(153,204,255,  0.7);
+		transition: 1s;
+	}
+
+	#tennisContent {
+		visibility: hidden;
+		position: absolute;
+		left: -100px;
+		background: rgba(153,204,255,  0.7);
 		transition: 1s;
 	}
 
@@ -2250,12 +2258,12 @@
 		background-size: 100% 100%;
 	}
 
-	#healthyWake:hover #slideContent {
+	#healthyWake:hover #healthyContent {
 		transition: 1s;
 		left: 0;
 	}
 
-	#tennisTracker:hover #slideContent {
+	#tennisTracker:hover #tennisContent {
 		visibility: visible;
 		transition: 1s;
 		left: 0;
