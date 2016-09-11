@@ -2233,8 +2233,7 @@
 /* Projects List */
 
 	#healthyContent {
-		padding: 10px 10px;
-		background: rgba(153,204,255,  0.7);
+		background: rgba(153, 204, 255,  0.7);
 		max-height: 0;
 		overflow: hidden;
 
@@ -2245,9 +2244,13 @@
 	}
 
 	#tennisContent {
-		padding: 10px 10px;
-		visibility: hidden;
-		transition: visibility 1s ease-out;
+		background: rgba(102, 255, 153,  0.7);
+		max-height: 0;
+		overflow: hidden;
+
+		-webkit-transition: max-height 0.8s;
+		-moz-transition: max-height 0.8s;
+		transition: max-height 0.8s;
 	}
 
 	#healthyWake {
@@ -2266,15 +2269,7 @@
 	}
 
 	#tennisTracker:hover #tennisContent {
-		visibility: visible;
-	}
-
-	#healthyWake:hover {
-		
-	}
-
-	#tennisTracker:hover {
-		
+		max-height: 200px;
 	}
 
 
