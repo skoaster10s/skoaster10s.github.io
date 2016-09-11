@@ -2232,6 +2232,10 @@
 
 /* Projects List */
 
+	#healthyTitle {
+		color: rgb(255, 128, 255);
+	}
+
 	#healthyContent {
 		border-radius: 5px;
 		margin: 50% 50% 50% 50%;
