@@ -2304,6 +2304,10 @@
 		
 	}
 
+	#homeBites:hover #bitesContent {
+		max-height: 300px;
+	}
+
 	#healthyWake:hover #healthyContent {
 		max-height: 300px;
 	}
