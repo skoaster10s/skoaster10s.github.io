@@ -2232,6 +2232,18 @@
 
 /* Projects List */
 
+	#bitesContent {
+		border-radius: 5px;
+		background: rgba(179, 179, 179,  0.7);
+		max-height: 0;
+		overflow: hidden;
+
+		-webkit-transition: max-height 0.8s;
+		-moz-transition: max-height 0.8s;
+		transition: max-height 0.8s;
+
+	}
+
 	#healthyTitle {
 		color: rgb(255, 128, 255);
 	}
@@ -2268,6 +2280,11 @@
 		-webkit-transition: max-height 0.8s;
 		-moz-transition: max-height 0.8s;
 		transition: max-height 0.8s;
+	}
+
+	#homeBites {
+		background-image: url("../../images/homeBites.jpg");
+		background-size: 100% 100%;
 	}
 
 	#healthyWake {
