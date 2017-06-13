@@ -2049,28 +2049,28 @@
 
 	#barPython {
 		position: absolute;
-		width: 77%;
+		width: 80%;
 		height: 100%;
 		background-color: #a6a6a6;
 	}
 
 	#barJava {
 		position: absolute;
-		width: 60%;
+		width: 65%;
 		height: 100%;
 		background-color: #a6a6a6;
 	}
 
 	#barCC {
 		position: absolute;
-		width: 45%;
+		width: 40%;
 		height: 100%;
 		background-color: #a6a6a6;
 	}
 
 	#barHCJ {
 		position: absolute;
-		width: 45%;
+		width: 40%;
 		height: 100%;
 		background-color: #a6a6a6;
 	}
@@ -2084,14 +2084,14 @@
 
 	#barR {
 		position: absolute;
-		width: 25%;
+		width: 20%;
 		height: 100%;
 		background-color: #a6a6a6;
 	}
 
 	#barMySQL {
 		position: absolute;
-		width: 20%;
+		width: 30%;
 		height: 100%;
 		background-color: #a6a6a6;
 	}
@@ -2304,7 +2304,7 @@
 		
 	}
 
-	#homeBites:hover #bitesContent {
+/*	#homeBites:hover #bitesContent {
 		max-height: 300px;
 	}
 
@@ -2318,7 +2318,7 @@
 
 	#tennisTracker:hover #tennisContent {
 		max-height: 200px;
-	}
+	}*/
 
 
 /* List */
