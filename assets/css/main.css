@@ -2235,7 +2235,7 @@
 	#bitesContent {
 		border-radius: 5px;
 		background: rgba(179, 179, 179,  0.7);
-		max-height: 300px;
+		overflow: hidden;
 	}
 
 	#healthyTitle {
@@ -2245,19 +2245,19 @@
 	#healthyContent {
 		border-radius: 5px;
 		background: rgba(179, 179, 179,  0.7);
-		max-height: 300px;
+		overflow: hidden;
 	}
 
 	#arduinoContent {
 		border-radius: 5px;
 		background: rgba(179, 179, 179,  0.7);
-		max-height: 200px;
+		overflow: hidden;
 	}
 
 	#tennisContent {
 		border-radius: 5px;
 		background: rgba(179, 179, 179,  0.7);
-		max-height: 200px;
+		overflow: hidden;
 	}
 
 	#homeBites {
@@ -2282,13 +2282,21 @@
 		
 	}
 
-/*	#arduinoWave:hover #arduinoContent {
+	#homeBites:hover #bitesContent {
+		max-height: 300px;
+	}
+
+	#healthyWake:hover #healthyContent {
+		max-height: 300px;
+	}
+
+	#arduinoWave:hover #arduinoContent {
 		max-height: 200px;
 	}
 
 	#tennisTracker:hover #tennisContent {
 		max-height: 200px;
-	}*/
+	}
 
 
 /* List */
