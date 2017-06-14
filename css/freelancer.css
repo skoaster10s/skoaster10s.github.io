@@ -72,7 +72,7 @@ header {
 
 header .intro-text .name {
 	display: block;
-	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Open Sans", Helvetica, sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 2em;
@@ -95,7 +95,7 @@ header .intro-text .skills {
 }
 .navbar-custom {
 	background: #2C3E50;
-	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Courier New", monospace;
 	text-transform: uppercase;
 	font-weight: 700;
 	border: none;
