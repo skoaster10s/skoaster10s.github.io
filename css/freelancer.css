@@ -30,39 +30,7 @@ h6 {
 	text-transform: uppercase;
 	font-weight: 700;
 }
-hr.star-light,
-hr.star-primary {
-	padding: 0;
-	border: none;
-	border-top: solid 5px;
-	text-align: center;
-	max-width: 250px;
-	margin: 25px auto 30px;
-}
-hr.star-light:after,
-hr.star-primary:after {
-	content: "\f005";
-	font-family: FontAwesome;
-	display: inline-block;
-	position: relative;
-	top: -0.8em;
-	font-size: 2em;
-	padding: 0 0.25em;
-}
-hr.star-light {
-	border-color: white;
-}
-hr.star-light:after {
-	background-color: #18BC9C;
-	color: white;
-}
-hr.star-primary {
-	border-color: #2C3E50;
-}
-hr.star-primary:after {
-	background-color: white;
-	color: #2C3E50;
-}
+
 .img-centered {
 	margin: 0 auto;
 }
@@ -72,7 +40,7 @@ header {
 
 header .intro-text .name {
 	display: block;
-	font-family: "Open Sans", Helvetica, sans-serif;
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 2em;
@@ -95,7 +63,7 @@ header .intro-text .skills {
 }
 .navbar-custom {
 	background: #2C3E50;
-	font-family: "Courier New", monospace;
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
 	border: none;
@@ -506,10 +474,7 @@ fieldset[disabled] .btn-success.active {
 div#maincontent {
 	outline: none;
 	padding: 12em 0 10em 0 ;
-	background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/banner.jpg");
-	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/banner.jpg");
-	background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/banner.jpg");
-	background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/banner.jpg");
+	background-image: url(http://mikeclark.mossycity.com/img/seattle-ver2.jpg);
 
 	text-align: center;
 	background-attachment: fixed;
