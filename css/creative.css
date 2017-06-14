@@ -423,3 +423,8 @@ img::-moz-selection {
 body {
 	webkit-tap-highlight-color: #222222;
 }
+
+.thumbnail img {
+    height:250px;
+    width:100%;
+}
