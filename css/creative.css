@@ -31,6 +31,9 @@ a:hover,
 a:focus {
 	color: white;
 }
+b {
+	color: white;
+}
 h1,
 h2,
 h3,
@@ -461,4 +464,8 @@ body {
 
 #projects {
 	background-color: #495a69;
+}
+
+.vcenter {
+	vertical-align: middle;
 }
