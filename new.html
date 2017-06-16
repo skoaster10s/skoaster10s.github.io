@@ -18,6 +18,7 @@
 	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
 
 	<!-- Plugin CSS -->
 	<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -97,14 +98,12 @@
 			</div>
 		</div>
 		<div class="container">
+			<h3 class="section-heading text-center">Programming Languages</h3>
 			<div class="row">
-				<div class="col-lg-3 col-md-6 text-center">
-					<div class="service-box">
-						<i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-						<h3>Sturdy Templates</h3>
-						<p class="text-white">Our templates are updated regularly so they don't break.</p>
-					</div>
-				</div>
+				<div class="col-lg-3 col-sm-6 text-center sr-progress" id="pythonBar">Python</div>
+				<div class="col-lg-3 col-sm-6 text-center sr-progress" id="javaBar">Java</div>
+				<div class="col-lg-3 col-sm-6 text-center sr-progress" id="ccBar">C/C++</div>
+				<div class="col-lg-3 col-sm-6 text-center sr-progress" id="webBar">HTML/CSS/JS</div>
 			</div>
 		</div>
 	</section>
@@ -141,33 +140,33 @@
 		</div>
 
 		<div class="container-fluid">
-			<div class="row no-gutter popup-gallery">
-				<div class="col-lg-6 col-sm-6 text-center">
-					<a class="portfolio-box">
-						<img src="images/homeBites.jpg" class="img-responsive thumbnail" alt="">
+			<div class="row no-gutter">
+				<div class="col-lg-6 col-sm-6 sr-projects">
+					<a href="http://devpost.com/software/homebites" class="portfolio-box">
+						<img src="images/homeBites.jpg" class="img-responsive thumbnail project-img" alt="">
 						<div class="portfolio-box-caption">
 							<div class="portfolio-box-caption-content">
-								<div class="project-category text-faded">
-									Category
-								</div>
 								<div class="project-name">
 									HomeBites
+								</div>
+								<div class="project-category text-faded">
+									Category
 								</div>
 							</div>
 						</div>
 					</a>
 				</div>
 
-				<div class="col-lg-6 col-sm-6 text-center">
-					<a class="portfolio-box">
-						<img src="images/healthyWake.jpg" class="img-responsive thumbnail" alt="">
+				<div class="col-lg-6 col-sm-6 text-center sr-projects">
+					<a href="http://devpost.com/software/healthywake" class="portfolio-box">
+						<img src="images/healthyWake.jpg" class="img-responsive thumbnail project-img" alt="">
 						<div class="portfolio-box-caption">
 							<div class="portfolio-box-caption-content">
 								<div class="project-category text-faded">
 									Category
 								</div>
 								<div class="project-name">
-									HealthyWake
+									Healthy Wake
 								</div>
 							</div>
 						</div>
@@ -176,9 +175,9 @@
 			</div>
 
 			<div class="row no-gutter popup-gallery">
-				<div class="col-lg-6 col-sm-6 text-center">
-					<a class="portfolio-box">
-						<img src="images/arduinoWave.jpg" class="img-responsive thumbnail" alt="">
+				<div class="col-lg-6 col-sm-6 text-center sr-projects">
+					<a href="https://github.com/skoaster10s/Arduino-Wave-Simulation" class="portfolio-box">
+						<img src="images/arduinoWave.jpg" class="img-responsive thumbnail project-img" alt="">
 						<div class="portfolio-box-caption">
 							<div class="portfolio-box-caption-content">
 								<div class="project-category text-faded">
@@ -192,9 +191,9 @@
 					</a>
 				</div>
 
-				<div class="col-lg-6 col-sm-6 text-center">
-					<a class="portfolio-box">
-						<img src="images/tennisTracker.jpg" class="img-responsive thumbnail" alt="">
+				<div class="col-lg-6 col-sm-6 text-center sr-projects">
+					<a href="https://github.com/skoaster10s/Tennis-Score-Tracker" class="portfolio-box">
+						<img src="images/tennisTracker.jpg" class="img-responsive thumbnail project-img" alt="">
 						<div class="portfolio-box-caption">
 							<div class="portfolio-box-caption-content">
 								<div class="project-category text-faded">
@@ -219,14 +218,14 @@
 					<h2 class="section-heading">Say Hello.</h2>
 					<hr class="light">
 				</div>
-				<div class="col-lg-12 text-center">
-					<p><a href="https://www.linkedin.com/in/sean-ko-7544a767"><i class="fa fa-linkedin-square fa-2x sr-contact vcenter"></i> LinkedIn</a></li></p>
+				<div class="col-lg-12 text-center sr-contact">
+					<p><a href="https://www.linkedin.com/in/sean-ko-7544a767"><i class="fa fa-linkedin-square fa-2x vcenter"></i> LinkedIn</a></li></p>
 				</div>
-				<div class="col-lg-12 text-center">
+				<div class="col-lg-12 text-center sr-contact">
 					<p><a href="https://github.com/skoaster10s" ><i class="fa fa-github fa-2x sr-contact vcenter"></i> @skoaster10s</a></li></p>
 				</div>
 
-				<div class="col-lg-12 text-center">
+				<div class="col-lg-12 text-center sr-contact">
 					<p><a href="mailto:seanko@mit.edu"><i class="fa fa-envelope-o fa-2x sr-contact vcenter"></i> seanko@mit.edu</a></p>
 				</div>
 			</div>
@@ -256,7 +255,10 @@
 	<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
 	<!-- Theme JavaScript -->
-	<script src="js/creative.js"></script>
+	<script src="js/main.js"></script>
+
+	<!-- ProgressBar JavaScript -->
+	<script src="js/progressbar.min.js"></script>
 
 </body>
 

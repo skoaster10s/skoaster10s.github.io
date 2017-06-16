@@ -257,14 +257,14 @@ header .header-content .header-content-inner p {
 	position: absolute;
 	bottom: 0;
 	text-align: center;
-	width: 100%;
+	width: 70%;
 	height: 100%;
 	-webkit-transition: all 0.35s;
 	-moz-transition: all 0.35s;
 	transition: all 0.35s;
 }
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
-	width: 100%;
+	width: 70%;
 	text-align: center;
 	position: absolute;
 	top: 50%;
@@ -468,4 +468,16 @@ body {
 
 .vcenter {
 	vertical-align: bottom;
+}
+
+.sr-progress {
+	width: 25%;
+	height: 25%;
+	position: relative;
+}
+
+.project-img {
+	width: 70%;
+	height: 70%;
+	margin: 0 auto;
 }
