@@ -43,15 +43,15 @@
         duration: 600,
         scale: 0.3,
         distance: '0px'
-    }, 300);
+    }, 80);
 
     sr.reveal('.sr-progress', {
         duration: 600
-    }, 50)
+    }, 50);
 
     sr.reveal('.sr-projects', {
         duration: 600
-    }, 50)
+    }, 50);
 
 })(jQuery); // End of use strict
 

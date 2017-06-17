@@ -268,7 +268,6 @@ header .header-content .header-content-inner p {
 	text-align: center;
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
 }
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
@@ -435,11 +434,6 @@ body {
 	webkit-tap-highlight-color: #222222;
 }
 
-.thumbnail img {
-    height:250px;
-    width:100%;
-}
-
 .parallax {
 	width: 100%;
 	-webkit-background-size: cover;
@@ -479,5 +473,4 @@ body {
 .project-img {
 	width: 70%;
 	height: 70%;
-	margin: 0 auto;
 }

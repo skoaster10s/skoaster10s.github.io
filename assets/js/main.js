@@ -62,6 +62,26 @@
 					offset: $header.outerHeight()
 				});
 
+		// Sroll Reveal
+			window.sr = ScrollReveal();
+		    sr.reveal('.sr-icons', {
+		        duration: 600,
+		        scale: 0.3,
+		        distance: '0px'
+		    }, 100);
+		    sr.reveal('.sr-contact', {
+		        duration: 600,
+		        scale: 0.3,
+		        distance: '0px'
+		    }, 80);
+		    sr.reveal('.sr-progress', {
+		        duration: 600
+		    }, 50);
+
+		    sr.reveal('.sr-projects', {
+		        duration: 600
+		    }, 50);
+
 		// Menu.
 			$('#menu')
 				.append('<a href="#menu" class="close"></a>')
