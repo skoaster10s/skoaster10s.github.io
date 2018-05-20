@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Foodle User Profile</title>
+
+<!-- Load style sheets -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Adding Font Awesome stylesheet -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- https://designshack.net/articles/css/the-10-best-script-and-handwritten-google-web-fonts/ -->
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css">
+
+<!-- Adding JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Adding Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+
+<script src="main.js"></script>
+
+</head>
+
+<body background="pictures/woodwall.png" class='profile'>
+
+<ul>
+  <li style='float:left' title="Foodle Home"><a class="nav header" href="index.html"><img src="logo/whitelogo2.svg" style="height:30px"></i></a></li>
+  <li style='float:left;margin-left:20%'><input type="text" placeholder=" Search" onfocus = "this.placeholder=''" onblur="this.placeholder='Search'" id="searchbar" name="fname"></li>
+  <li style='float:left'> <a> <i class="fa fa-search"> </i> </a> </li>
+  <li><a id='li-newpost' href="newpost.html" title="Create New Post"><i class="fa fa-plus"></i></a></li>
+  <li><a id='li-profile' href="profile.html" title="My Profile"><i class="fa fa-user"></i></a></li>
+  <li><a id='li-saved' href="saved.html" title="Saved Posts"><i class="fa fa-bookmark"></i></a></li>
+</ul>
+
+<div class="profile header">
+  <div> <img class="profile-picture" src='pictures/gordon.jpg'> </div>
+  <div class="profile_bio">
+  	<div class="prof_name">
+    Gordon Ramsay
+    </div> 
+    <div style="font-size:0.4em">
+      I'm always hangry and I think I'm a big deal. <br>But seriously watch my shows or something. 
+    </div> 
+    <div class='info'>
+      <div><a href="">50K </a> followers</div>
+      <div><a href="">0 </a> following</div>
+  	</div>
+  </div>
+</div>
+
+<div class="profile-grid" id="profile-grid">
+
+  <div class="post" id='sample-0'>
+    <div class="dropdown">
+      <button onclick="drop('myDropdown0')" class="dropbtn">...</button>
+      <div id="myDropdown0" class="dropdown-content">
+        <button onclick="deletePost('sample-0')">Delete</button>
+      </div>
+    </div>
+
+    <div class="picture">
+    	<img src="pictures/sushirrito.jpg" class="profile_image" onclick="on('sample-post0')">
+    	<button class="button" id="like_p1" onclick="like('p1')"> <i class="fa fa-heart"></i> </button>
+  		<button class="button" id="bookmark" onclick="save()"> <i class="fa fa-bookmark"></i> </button>	
+  		<button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+
+      <div class="overlay" onclick="on('sample-post0')">
+        <div class="text"> Sushiritto </div> 
+        <div class="small_text"> From my most recent SF trip! </div> <br>
+        <div class="text_info">
+	        <p> <i class="fa fa-globe"></i> Mission St. </p>
+	        <p> <i class="fa fa-calendar"></i> May 4, 2018 </p>
+	        <p> <i class="fa fa-heart"></i> <label id="p1">100</label></p>
+	    </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sample-post0" class="post-overlay" onclick="off('sample-post0')">
+    <div class="post-overlay-bg t1">
+      <div class="post-overlay-title">Sushiritto</div>
+      <img class="post-overlay-img" src='pictures/sushirrito.jpg'>
+      <div class="post-overlay-body">EAT MY SHIT.</div>
+    </div>
+  </div>
+
+  <div class="post" id='sample-1'>
+    <div class="dropdown">
+      <button onclick="drop('myDropdown1')" class="dropbtn">...</button>
+      <div id="myDropdown1" class="dropdown-content">
+        <button onclick="deletePost('sample-1')">Delete</button>
+      </div>
+    </div>
+
+    <div class="picture">
+    	<img src="pictures/panza.jpg" class="profile_image" onclick="on('sample-post1')">
+    	<button class="button" id="like_p2" onclick="like('p2')"> <i class="fa fa-heart"></i> </button>
+		  <button class="button" id="bookmark_p2" onclick="save('p2')"> <i class="fa fa-bookmark"></i> </button>	
+		  <button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+
+      <div class="overlay" onclick="on('sample-post1')">
+        <div class="text"> Italian Eats </div> 
+        <div class="small_text"> Always go for the seafood and marinara </div> <br>
+        <div class="text_info">
+	        <p> <i class="fa fa-globe"></i> Boston Seaport </p>
+	        <p> <i class="fa fa-calendar"></i> May 3, 2018 </p>
+	        <p><i class="fa fa-heart"></i> <label id="p2">100</label></p>
+	    </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sample-post1" class="post-overlay" onclick="off('sample-post1')">
+    <div class="post-overlay-bg t2">
+      <div class="post-overlay-title">Italian Eats</div>
+      <img class="post-overlay-img" src='pictures/panza.jpg'>
+      <div class="post-overlay-body">EAT MY SHIT.</div>
+      <div class="post-overlay-body">EAT MY SHIT.</div>
+    </div>
+  </div>
+
+
+  <div class="post" id='sample-2'>
+    <div class="dropdown">
+      <button onclick="drop('myDropdown2')" class="dropbtn">...</button>
+      <div id="myDropdown2" class="dropdown-content">
+        <button onclick="deletePost('sample-2')">Delete</button>
+      </div>
+    </div>
+
+    <div class="picture">
+    	<img src="pictures/halalguys.jpg" class="profile_image" onclick="on('sample-post2')">
+    	<button class="button" id="like_p3" onclick="like('p3')"> <i class="fa fa-heart"></i> </button>
+		  <button class="button" id="bookmark_p3" onclick="save('p3')"> <i class="fa fa-bookmark"></i> </button>	
+  		<button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+
+      <div class="overlay" onclick="on('sample-post2')">
+        <div class="text"> Favorite Halal Chain </div> 
+        <div class="small_text"> Hits the spot every single time </div> <br>
+        <div class="text_info">
+	        <p> <i class="fa fa-globe"></i> Halal Guys </p>
+	        <p> <i class="fa fa-calendar"></i> May 2, 2018 </p>
+	        <p><i class="fa fa-heart"></i> <label id="p3">100</label></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sample-post2" class="post-overlay" onclick="off('sample-post2')">
+    <div class="post-overlay-bg t3">
+      <div class="post-overlay-title">Favorite Halal Chain</div>
+      <img class="post-overlay-img" src='http://www.crainsnewyork.com/apps/pbcsi.dll/storyimage/CN/20161212/SMALLBIZ/161209882/AR/0/AR-161209882.jpg'>
+      <img class="post-overlay-img" src='pictures/halalguys.jpg'>
+      <div class="post-overlay-body">EAT MY SHIT.</div>
+      <div class="post-overlay-body">EAT MY SHIT.</div>
+    </div>
+  </div>
+
+
+  <div class="post" id='sample-3'>
+    <div class="dropdown">
+      <button onclick="drop('myDropdown3')" class="dropbtn">...</button>
+      <div id="myDropdown3" class="dropdown-content">
+        <button onclick="deletePost('sample-3')">Delete</button>
+      </div>
+    </div>
+
+    <div class="picture">
+    	<img src="pictures/fruit.jpg" class="profile_image" onclick="on('sample-post3')">
+    	<button class="button" id="like_p4" onclick="like('p4')"> <i class="fa fa-heart"></i> </button>
+		  <button class="button" id="bookmark_p4" onclick="save('p4')"> <i class="fa fa-bookmark"></i> </button>	
+		  <button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+
+      <div class="overlay" onclick="on('sample-post3')">
+        <div class="text"> Fruit Bowl to Share </div> 
+        <div class="small_text"> Gotta get those vitamins </div> <br>
+        <div class="text_info">
+	        <p> <i class="fa fa-globe"></i> Acai Bowls for Days </p>
+	        <p> <i class="fa fa-calendar"></i> May 1, 2018 </p>
+	        <p><i class="fa fa-heart"></i> <label id="p4">100</label></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sample-post3" class="post-overlay" onclick="off('sample-post3')">
+    <div class="post-overlay-bg t4">
+      <div class="post-overlay-title">Fruit Bowl to Share</div>
+      <img class="post-overlay-img" src='pictures/fruit.jpg'>
+      <img class="post-overlay-img" src="https://media.self.com/photos/58af461b3716125fdf443475/4:3/w_728,c_limit/dragon-fruit-bowl.jpg">
+      <div class="post-overlay-body">EAT MY SHIT.</div>
+      <img class="post-overlay-img" src="https://www.chowstatic.com/assets/models/promotions/photos/28308/original/31759_acai_bowl_inline_3000_2.jpg">
+      <img class="post-overlay-img" src="https://theforkedspoon.com/wp-content/uploads/2016/02/OvernightOatswithMixedFruit1.jpg">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

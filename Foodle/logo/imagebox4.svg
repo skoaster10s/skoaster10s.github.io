@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="494px" height="353px" viewBox="0 0 494 353" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="494" height="353"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-5">
+            <g id="Rectangle">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect x="0" y="0" width="494" height="353"></rect>
+            </g>
+            <text id="Image" font-family="Avenir-Book, Avenir" font-size="30" font-weight="normal" letter-spacing="-1.79827416" fill="#000000" fill-opacity="0.661713089">
+                <tspan x="44" y="81">Image</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

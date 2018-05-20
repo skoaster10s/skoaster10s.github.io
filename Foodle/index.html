@@ -5,10 +5,315 @@
 <head>
 <meta charset="utf-8">
 <title>Foodle Home</title>
+
+<!-- Load style sheets -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Adding Font Awesome stylesheet -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<!-- https://designshack.net/articles/css/the-10-best-script-and-handwritten-google-web-fonts/ -->
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css">
+
+<!-- Adding JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Adding Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+
+<script src="main.js"></script>
+
 </head>
 
-<body>
-Test
+<body background="pictures/woodwall.png" class='home'>
+
+<ul>
+  <li style='float:left' title="Foodle Home"><a class="nav header" href="index.html"><img src="logo/whitelogo2.svg" style="height:30px"></i></a></li>
+  <li style='float:left;margin-left:20%'><input type="text" placeholder=" Search" onfocus = "this.placeholder=''" onblur="this.placeholder='Search'" id="searchbar" name="fname"></li>
+  <li style='float:left'> <a> <i class="fa fa-search"> </i> </a> </li>
+  <li><a id='li-newpost' href="newpost.html" title="Create New Post"><i class="fa fa-plus"></i></a></li>
+  <li><a id='li-profile' href="profile.html" title="My Profile"><i class="fa fa-user"></i></a></li>
+  <li><a id='li-saved' href="saved.html" title="Saved Posts"><i class="fa fa-bookmark"></i></a></li>
+</ul>
+
+<section>
+	<br> </br>
+	<img src="logo/foodle.svg" style="width: 50%" class="center"> 
+	<h1> <center style = "font-style: light; width:100%" class = "center"> <font face="Quicksand" size="24" color="#333"> a social platform for inspired eats
+
+</section>
+
+<div class="flex-grid">
+	<div class = "post" style="background-color: white">
+		<div class="post-div"> <i class="fa fa-user"></i> <a href = "http://www.mitathletics.com/sports/m-squash/2015-16/bios/punwaney_nikhil_1e46?view=bio"> Nikhil </a></div>
+		<div class = "picture">
+			<img src="pictures/avocorn.jpg" class="image" onclick="on('home-post0')">
+			<button class="button" id="like_a1" onclick="like('a1')"> <i class="fa fa-heart"></i> </button>
+			<button class="button" id="bookmark_a1" onclick="save('a1')"> <i class="fa fa-bookmark"></i> </button>	
+			<button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+
+			<div class="overlay" onclick="on('home-post0')">
+				<div class="text"> Avocado Toast </div> 
+				<div class="small_text"> A yummy, nutritious breakfast for the soul </div> <br>
+				<div class="text_info">
+					<p> <i class="fa fa-globe"></i> New York </p>
+					<p> <i class="fa fa-calendar"></i> May 4, 2018 </p>
+					<p><i class="fa fa-heart"></i> <label id='a1'>9999</label></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="home-post0" class="post-overlay" onclick="off('home-post0')">
+		<div class="post-overlay-bg t1">
+			<div class="post-overlay-title">Avocado Toast</div>
+			<img class="post-overlay-img" src='pictures/avocorn.jpg'>
+			<div class="post-overlay-body">A healthy way to start the morning.</div>
+		</div>
+	</div>
+
+	<div class = "post" style="background-color: white">
+		<div class="post-div"> <i class="fa fa-user"></i> <a href = "https://en.wikipedia.org/wiki/Kim_Kardashian">Kim K. </a> </div>
+		<div class = "picture">
+			<img src="pictures/pizza.jpg" class="image" onclick="on('home-post1')">
+			<button class="button" id="like_a2" onclick="like('a2')"> <i class="fa fa-heart"></i> </button>
+			<button class="button" id="bookmark_a2" onclick="save('a2')"> <i class="fa fa-bookmark"></i> </button>	
+			<button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+			<div class="overlay" onclick="on('home-post1')">
+				<div class="text"> Artisan Pizza </div> 
+				<div class="small_text"> Mama Mia, Pizzeria! </div> <br>
+				<div class="text_info">
+					<p> <i class="fa fa-globe"></i> Area Four </p>
+					<p> <i class="fa fa-calendar"></i> May 3, 2018 </p>
+					<p><i class="fa fa-heart"></i> <label id='a2'>2</label></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="home-post1" class="post-overlay" onclick="off('home-post1')">
+		<div class="post-overlay-bg t1">
+			<div class="post-overlay-title">Artisan Pizza</div>
+			<img class="post-overlay-img" src='pictures/pizza.jpg'>
+			<div class="post-overlay-body">Italian goodness.</div>
+		</div>
+	</div>
+
+	<div class = "post" style="background-color: white">
+		<div class="post-div"> <i class="fa fa-user"></i> <a href="http://web.mit.edu/6.813/www/sp18/">David Karger </a></div>
+		<div class = "picture">
+			<img src="pictures/icecream.jpg" class="image" onclick="on('home-post2')">
+			<button class="button" id="like_a3" onclick="like('a3')"> <i class="fa fa-heart"></i> </button>
+			<button class="button" id="bookmark_a3" onclick="save('a3')"> <i class="fa fa-bookmark"></i> </button>	
+			<button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+			<div class="overlay" onclick="on('home-post2')">
+				<div class="text"> Japanese Soft Serve </div> 
+				<div class="small_text"> Perks of traveling the world </div> <br>
+				<div class="text_info">
+					<p> <i class="fa fa-globe"></i> Tokyo </p>
+					<p> <i class="fa fa-calendar"></i> May 2, 2018 </p>
+					<p><i class="fa fa-heart"></i> <label id='a3'>9999</label></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="home-post2" class="post-overlay" onclick="off('home-post2')">
+		<div class="post-overlay-bg t1">
+			<div class="post-overlay-title">Japanese Soft Serve</div>
+			<img class="post-overlay-img" src='pictures/icecream.jpg'>
+			<div class="post-overlay-body">A nice cold treat for hot summer days!</div>
+		</div>
+	</div>
+
+	<div class = "post" style="background-color: white">
+		<div class="post-div"> <i class="fa fa-user"></i> <a href="https://hz.mit.edu/"> Adam Hartz </a></div>
+		<div class = "picture">
+			<img src="pictures/muffin.jpg" class="image" onclick="on('home-post3')">
+			<button class="button" id="like_a4" onclick="like('a4')"> <i class="fa fa-heart"></i> </button>
+			<button class="button" id="bookmark_a4" onclick="save('a4')"> <i class="fa fa-bookmark"></i> </button>	
+			<button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+			<div class="overlay" onclick="on('home-post3')">
+				<div class="text"> Homemade Muffins </div> 
+				<div class="small_text"> For the lazy sweet-toothed </div> <br>
+				<div class="text_info">
+					<p> <i class="fa fa-globe"></i> Home Sweet Home </p>
+					<p> <i class="fa fa-calendar"></i> May 1, 2018 </p>
+					<p><i class="fa fa-heart"></i> <label id='a4'>2</label></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="home-post3" class="post-overlay" onclick="off('home-post3')">
+		<div class="post-overlay-bg t1">
+			<div class="post-overlay-title">Homemade Muffins</div>
+			<img class="post-overlay-img" src='pictures/muffin.jpg'>
+			<div class="post-overlay-body">Reminds me of mom's cooking back in the day.</div>
+		</div>
+	</div>
+
+	<div class = "post" style="background-color: white">
+		<div class="post-div"> <i class="fa fa-user"></i> <a href="https://www.angieats.com/"> Angela H. </a> </div>
+		<div class = "picture">
+			<img src="pictures/corn.jpg" class="image" onclick="on('home-post4')">
+			<button class="button" id="like_a5" onclick="like('a5')"> <i class="fa fa-heart"></i> </button>
+			<button class="button" id="bookmark_a5" onclick="save('a5')"> <i class="fa fa-bookmark"></i> </button>	
+			<button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+			<div class="overlay" onclick="on('home-post4')">
+				<div class="text"> Corn Toast </div>
+				<div class="small_text"> A healthy and appetizing lunch alternative </div> <br>
+				<div class="text_info">
+					<p> <i class="fa fa-globe"></i> Cafe Luna </p>
+					<p> <i class="fa fa-calendar"></i> April 30, 2018 </p>
+					<p><i class="fa fa-heart"></i> <label id='a5'>69</label></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="home-post4" class="post-overlay" onclick="off('home-post4')">
+		<div class="post-overlay-bg t1">
+			<div class="post-overlay-title">Corn Toast</div>
+			<img class="post-overlay-img" src='pictures/corn.jpg'>
+			<div class="post-overlay-body">Cafe Luna has som of the best bread and corn in the world.</div>
+		</div>
+	</div>
+
+	<div class = "post" style="background-color: white">
+		<div class="post-div"> <i class="fa fa-user"></i> <a href="https://en.wikipedia.org/wiki/Friends"> Chandler Bing <a> </div>
+		<div class = "picture">
+			<img src="pictures/health.jpg" class="image" onclick="on('home-post5')">
+			<button class="button" id="like_a6" onclick="like('a6')"> <i class="fa fa-heart"></i> </button>
+			<button class="button" id="bookmark_a6" onclick="save('a6')"> <i class="fa fa-bookmark"></i> </button>	
+			<button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+			<div class="overlay" onclick="on('home-post5')">
+				<div class="text"> Protein Day </div> 
+				<div class="small_text"> Building muscles for Marathon Day </div> <br>
+				<div class="text_info">
+					<p> <i class="fa fa-globe"></i> Anywhere but Maseeh Dining </p>
+					<p> <i class="fa fa-calendar"></i> April 29, 2018 </p>
+					<p><i class="fa fa-heart"></i> <label id='a6'>1</label></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="home-post5" class="post-overlay" onclick="off('home-post5')">
+		<div class="post-overlay-bg t1">
+			<div class="post-overlay-title">Protein Day</div>
+			<img class="post-overlay-img" src='pictures/health.jpg'>
+			<div class="post-overlay-body">Get. Swole.</div>
+		</div>
+	</div>
+
+	<div class = "post" style="background-color: white">
+		<div class="post-div"> <i class="fa fa-user"></i> <a href ="https://en.wikipedia.org/wiki/Pikachu"> Pikachu </a></div>
+		<div class = "picture">
+			<img src="pictures/smoldish.jpg" class="image" onclick="on('home-post6')">
+			<button class="button" id="like_a7" onclick="like('a7')"> <i class="fa fa-heart"></i> </button>
+			<button class="button" id="bookmark_a7" onclick="save('a7')"> <i class="fa fa-bookmark"></i> </button>	
+			<button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+			<div class="overlay" onclick="on('home-post6')">
+				<div class="text"> Gourmet Sushi </div> 
+				<div class="small_text"> Celebrating a special occasion with a special meal </div> <br>
+				<div class="text_info">
+					<p> <i class="fa fa-globe"></i> Fuji Restaurant and Bar </p>
+					<p> <i class="fa fa-calendar"></i> April 28, 2018 </p>
+					<p><i class="fa fa-heart"></i> <label id='a7'>8888</label></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="home-post6" class="post-overlay" onclick="off('home-post6')">
+		<div class="post-overlay-bg t1">
+			<div class="post-overlay-title">Gourmet Sushi</div>
+			<img class="post-overlay-img" src='pictures/smoldish.jpg'>
+			<div class="post-overlay-body">Everyone loves sushi.</div>
+		</div>
+	</div>
+
+	<div class = "post" style="background-color: white">
+		<div class="post-div"> <i class="fa fa-user"></i> <a href="https://en.wikipedia.org/wiki/Beyonce"> Beyonce </a> </div>
+		<div class = "picture">
+			<img src="pictures/pancakes.jpg" class="image" onclick="on('home-post7')">
+			<button class="button" id="like_a8" onclick="like('a8')"> <i class="fa fa-heart"></i> </button>
+			<button class="button" id="bookmark_a8" onclick="save('a8')"> <i class="fa fa-bookmark"></i> </button>	
+			<button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+			<div class="overlay" onclick="on('home-post7')">
+				<div class="text"> Fluffy Breakfast </div> 
+				<div class="small_text"> So good you'll actually want to wake up early on the weekend </div> <br>
+				<div class="text_info">
+					<p> <i class="fa fa-globe"></i> Boston, MA </p>
+					<p> <i class="fa fa-calendar"></i> April 27, 2018 </p>
+					<p><i class="fa fa-heart"></i> <label id='a8'>2130</label></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="home-post7" class="post-overlay" onclick="off('home-post7')">
+		<div class="post-overlay-bg t1">
+			<div class="post-overlay-title">Fluffy Breakfast</div>
+			<img class="post-overlay-img" src='pictures/pancakes.jpg'>
+			<div class="post-overlay-body">Start the day right.</div>
+		</div>
+	</div>
+
+	<div class = "post" style="background-color: white">
+		<div class="post-div"> <i class="fa fa-user"></i> <a href ="https://en.wikipedia.org/wiki/Gordon_Ramsay"> Gordon Ramsay </a></div>
+		<div class = "picture">
+			<img src="pictures/tofu.jpg" class="image" onclick="on('home-post8')">
+			<button class="button" id="like_a9" onclick="like('a9')"> <i class="fa fa-heart"></i> </button>
+			<button class="button" id="bookmark_a9" onclick="save('a9')"> <i class="fa fa-bookmark"></i> </button>	
+			<button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+			<div class="overlay" onclick="on('home-post8')">
+				<div class="text"> Creamy Soba </div>
+				<div class="small_text"> Tofu and soybean noodles, what more could you ask for? </div> <br>
+				<div class="text_info">
+					<p> <i class="fa fa-globe"></i> Summer Shack </p>
+					<p> <i class="fa fa-calendar"></i> April 26, 2018 </p>
+					<p><i class="fa fa-heart"></i> <label id='a9'>9079</label></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="home-post8" class="post-overlay" onclick="off('home-post8')">
+		<div class="post-overlay-bg t1">
+			<div class="post-overlay-title">Creamy Soba</div>
+			<img class="post-overlay-img" src='pictures/tofu.jpg'>
+			<div class="post-overlay-body">Tofu and soybean noodles, what more could you ask for?</div>
+		</div>
+	</div>
+
+</div>
 </body>
+
+<script>
+function like(id) {
+	if (document.getElementById("like_"+id).style.color=="red") {
+		document.getElementById("like_"+id).style.color="grey";
+		current = parseInt($('#'+id)[0].innerHTML)-1
+		document.getElementById(id).innerHTML = current
+	} else {
+		document.getElementById("like_"+id).style.color="red";
+		current = parseInt($('#'+id)[0].innerHTML)+1
+		document.getElementById(id).innerHTML = current
+	}
+}
+
+function save(id) {
+	if (document.getElementById("bookmark_" + id).style.color=="royalblue") {
+		document.getElementById("bookmark_" + id).style.color="grey";
+	} else {
+		document.getElementById("bookmark_" + id).style.color="royalblue";
+	}
+}
+</script>
 
 </html>

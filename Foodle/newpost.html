@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Foodle New Post</title>
+
+<!-- Load style sheets -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Adding Font Awesome stylesheet -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- https://designshack.net/articles/css/the-10-best-script-and-handwritten-google-web-fonts/ -->
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css">
+
+<!-- Adding JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Adding Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+
+<script src="main.js"></script>
+
+</head>
+
+<body background="pictures/woodwall.png" class='newpost'>
+
+<ul>
+  <li style='float:left' title="Foodle Home"><a class="nav header" href="index.html"><img src="logo/whitelogo2.svg" style="height:30px"></i></a></li>
+  <li style='float:left;margin-left:20%'><input type="text" placeholder=" Search" onfocus = "this.placeholder=''" onblur="this.placeholder='Search'" id="searchbar" name="fname"></li>
+  <li style='float:left'> <a> <i class="fa fa-search"> </i> </a> </li>
+  <li><a id='li-newpost' href="newpost.html" title="Create New Post"><i class="fa fa-plus"></i></a></li>
+  <li><a id='li-profile' href="profile.html" title="My Profile"><i class="fa fa-user"></i></a></li>
+  <li><a id='li-saved' href="saved.html" title="Saved Posts"><i class="fa fa-bookmark"></i></a></li>
+</ul>
+
+<div class="profile header">New Blog Post</div>
+
+<div class='newpost-grid' id='newpost-grid'>
+  <div id='templates'>
+    <h id='template-header'>Templates</h>
+    <div id='template-sidebar'>
+      <button class='template-btn' id='t1-btn' onclick="template1()"><img src="pictures/template1.png"></button>
+      <button class='template-btn' id='t2-btn' onclick="template2()"><img src="pictures/template2.png"></button>
+      <button class='template-btn' id='t3-btn' onclick="template3()"><img src="pictures/template3.png"></button>
+      <button class='template-btn' id='t4-btn' onclick="template4()"><img src="pictures/template4.png"></button>
+    </div>
+    <div id='show-toggle' onclick="closeNav()">
+      <i id='hide-sidebar' class="fa fa-caret-left" aria-hidden="true"></i>
+    </div>
+  </div>
+  
+  <div id='canvas'>
+    <div id='initial'>
+      <i class="fa fa-arrow-left" aria-hidden="true"></i> Choose a Template from the Left
+    </div>
+
+    <div class="template" id="template1">
+      <input type="text" placeholder="Title" onfocus="this.placeholder=''" onblur="this.placeholder='Title'" id="t1-title">
+      
+      <img id="t1-img0">
+      <input type="file" id="t1-upload0">
+
+      <textarea id="t1-body0" placeholder="Text..." onfocus="this.placeholder=''" onblur="this.placeholder='Text...'"></textarea>
+    </div>
+    
+    <div class="template" id="template2">
+      <input type="text" placeholder="Title" onfocus="this.placeholder=''" onblur="this.placeholder='Title'" id="t2-title">
+      
+      <div id="t2-area0">
+        <img id="t2-img0">
+        <input type="file" id="t2-upload0">
+      </div>
+
+      <textarea id="t2-body0" placeholder="Text..." onfocus="this.placeholder=''" onblur="this.placeholder='Text...'"></textarea>
+      <textarea id="t2-body1" placeholder="Text..." onfocus="this.placeholder=''" onblur="this.placeholder='Text...'"></textarea>
+    </div>
+
+    <div class="template" id="template3">
+      <input type="text" placeholder="Title" onfocus="this.placeholder=''" onblur="this.placeholder='Title'" id="t3-title">
+
+      <div id="t3-area0">
+        <img id="t3-img0">
+        <input type="file" id="t3-upload0">
+      </div>
+
+      <div id="t3-area1">
+        <img id="t3-img1">
+        <input type="file" id="t3-upload1">
+      </div>
+
+      <textarea id="t3-body0" placeholder="Text..." onfocus="this.placeholder=''" onblur="this.placeholder='Text...'"></textarea>
+
+      <textarea id="t3-body1" placeholder="Text..." onfocus="this.placeholder=''" onblur="this.placeholder='Text...'"></textarea>
+    </div>
+
+    <div class="template" id="template4">
+      <input type="text" placeholder="Title" onfocus="this.placeholder=''" onblur="this.placeholder='Title'" id="t4-title">
+
+      <div id="t4-area0">
+        <img id="t4-img0">
+        <input type="file" id="t4-upload0">
+      </div>
+
+      <div id="t4-area1">
+        <img id="t4-img1">
+        <input type="file" id="t4-upload1">
+      </div>
+
+      <textarea id="t4-body0" placeholder="Text..." onfocus="this.placeholder=''" onblur="this.placeholder='Text...'"></textarea>
+
+      <div id="t4-area2">
+        <img id="t4-img2">
+        <input type="file" id="t4-upload2">
+      </div>
+
+      <div id="t4-area3">
+        <img id="t4-img3">
+        <input type="file" id="t4-upload3">
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<button id='next-btn' onclick='next()' disabled>Next <i class="fa fa-caret-right" aria-hidden="true"></i></button>
+
+<div class='form-overlay' id='form-overlay'>
+  <form id="form" action="javascript:void(0);">
+    <fieldset>
+      <legend>Post Layout:</legend>
+
+      <table id="thumbnail-table">
+        <tr id="row0">
+          <td>Choose thumbnail:</td>
+          <td><img class="thumbnail" id='thumbnail1'><br><input class="radio" type="radio" disabled></td>
+        </tr>
+      </table>
+
+      <table id="other-table">
+        <tr>
+          <td>Hover caption:</td>
+          <td><textarea type="text" id="hover-info" placeholder="To be displayed when hovered over." onfocus="this.placeholder=''" onblur="this.placeholder='To be displayed when hovered over.'" rows="1" cols="50" onkeyup="textAreaAdjust(this)"></textarea></td>
+        </tr>
+        <tr>
+          <td>Location:</td>
+          <td><input type="text" id="location" placeholder="i.e. The Capital Grille" onfocus="this.placeholder=''" onblur="this.placeholder='i.e. The Capital Grille'"></td>
+        </tr>
+      </table>
+      <br>
+
+      <input id='post-btn' type="submit" value="Post!" onclick="post()">
+      <button id='cancel-btn' onclick='cancel()'>Cancel</button>
+    </fieldset>
+  </form>
+</div>
+
+</body>
+
+</html>

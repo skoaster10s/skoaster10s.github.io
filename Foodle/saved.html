@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Foodle New Post</title>
+
+<!-- Load style sheets -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Adding Font Awesome stylesheet -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- https://designshack.net/articles/css/the-10-best-script-and-handwritten-google-web-fonts/ -->
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css">
+
+<!-- Adding JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Adding Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+
+<script src="main.js"></script>
+
+</head>
+
+<body background="pictures/woodwall.png" class='saved'>
+
+<ul>
+  <li style='float:left' title="Foodle Home"><a class="nav header" href="index.html"><img src="logo/whitelogo2.svg" style="height:30px"></i></a></li>
+  <li style='float:left;margin-left:20%'><input type="text" placeholder=" Search" onfocus = "this.placeholder=''" onblur="this.placeholder='Search'" id="searchbar" name="fname"></li>
+  <li style='float:left'> <a> <i class="fa fa-search"> </i> </a> </li>
+  <li><a id='li-newpost' href="newpost.html" title="Create New Post"><i class="fa fa-plus"></i></a></li>
+  <li><a id='li-profile' href="profile.html" title="My Profile"><i class="fa fa-user"></i></a></li>
+  <li><a id='li-saved' href="saved.html" title="Saved Posts"><i class="fa fa-bookmark"></i></a></li>
+</ul>
+
+<div> 
+	<br>
+	<h2><center style="font-family: Quicksand"> Saved Posts </center></h2>
+</div>
+<center>
+  <div class = "post" style="background-color: white">
+	   <div class="post-div" style="float:left"> <i class="fa fa-user"></i> <a href = "http://www.mitathletics.com/sports/m-squash/2015-16/bios/punwaney_nikhil_1e46?view=bio"> Nikhil </a></div>
+    <div class = "picture">
+      <img src="pictures/salad.jpg" class="image" style="margin-bottom:20px">
+      <button class="button" id="like_s1" onclick="like('s1')"> <i class="fa fa-heart"></i> </button>
+      <button class="button" id="bookmark_s1" onclick="save('s1')" style="color:royalblue"> <i class="fa fa-bookmark"></i> </button>  
+      <button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+      <div class="overlay">
+        <div class="text"> Summer salad </div> 
+        <div class="small_text"> Trying to eat more food groups </div> <br>
+        <div class="text_info">
+          <p> <i class="fa fa-globe"></i> Boston, MA </p>
+          <p> <i class="fa fa-calendar"></i> May 4, 2018 </p>
+          <p><i class="fa fa-heart"></i> <label id='s1'>9999</label></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "post" style="background-color: white">
+	 <div class="post-div" style="float:left"> <i class="fa fa-user"></i> <a href = "http://www.mitathletics.com/sports/m-squash/2015-16/bios/punwaney_nikhil_1e46?view=bio"> Nikhil </a></div>
+
+    <div class = "picture">
+      <img src="pictures/clam.jpg" class="image" style="margin-bottom:20px">
+      <button class="button" id="like_s2" onclick="like('s2')"> <i class="fa fa-heart"></i> </button>
+      <button class="button" id="bookmark_s2" onclick="save('s2')" style="color:royalblue"> <i class="fa fa-bookmark"></i> </button>  
+      <button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+      <div class="overlay">
+        <div class="text"> New England Clam Chowdah </div> 
+        <div class="small_text"> Boston's Best! </div> <br>
+        <div class="text_info">
+          <p> <i class="fa fa-globe"></i> Boston Seaport </p>
+          <p> <i class="fa fa-calendar"></i> May 3, 2018 </p>
+          <p><i class="fa fa-heart"></i> <label id='s2'>9999</label></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "post" style="background-color: white">
+	 <div class="post-div" style="float:left"> <i class="fa fa-user"></i> <a href = "http://www.mitathletics.com/sports/m-squash/2015-16/bios/punwaney_nikhil_1e46?view=bio"> Nikhil </a></div>
+    <div class = "picture">
+      <img src="pictures/yolk.jpg" class="image" style="margin-bottom:20px">
+      <button class="button" id="like_s3" onclick="like('s3')"> <i class="fa fa-heart"></i> </button>
+      <button class="button" id="bookmark_s3" onclick="save('s3')" style="color:royalblue"> <i class="fa fa-bookmark"></i> </button>  
+      <button class="button" id="comment"> <i class="fa fa-comment"></i> </button>
+      <div class="overlay">
+        <div class="text"> Yolk Porn </div> 
+        <div class="small_text"> Camera eats first </div> <br>
+        <div class="text_info">
+          <p> <i class="fa fa-globe"></i> Tatte Bakery </p>
+          <p> <i class="fa fa-calendar"></i> May 2, 2018 </p>
+          <p><i class="fa fa-heart"></i> <label id='s3'>9999</label></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</center>
+</div>
+<br></br>
+</body>
+
+<script>
+function like(id) {
+  if (document.getElementById("like_"+id).style.color=="red") {
+    document.getElementById("like_"+id).style.color="grey";
+    current = parseInt($('#'+id)[0].innerHTML)-1
+    document.getElementById(id).innerHTML = current
+  } else {
+    document.getElementById("like_"+id).style.color="red";
+    current = parseInt($('#'+id)[0].innerHTML)+1
+    document.getElementById(id).innerHTML = current
+  }
+}
+
+function save(id) {
+  if (document.getElementById("bookmark_" + id).style.color=="royalblue") {
+    document.getElementById("bookmark_" + id).style.color="grey";
+  } else {
+    document.getElementById("bookmark_" + id).style.color="royalblue";
+  }
+}
+</script>
+
+</html>
