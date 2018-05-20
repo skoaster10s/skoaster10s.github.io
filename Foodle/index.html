@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-
 <!-- https://designshack.net/articles/css/the-10-best-script-and-handwritten-google-web-fonts/ -->
 <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css">
@@ -292,28 +291,7 @@
 	</div>
 
 </div>
+
 </body>
-
-<script>
-function like(id) {
-	if (document.getElementById("like_"+id).style.color=="red") {
-		document.getElementById("like_"+id).style.color="grey";
-		current = parseInt($('#'+id)[0].innerHTML)-1
-		document.getElementById(id).innerHTML = current
-	} else {
-		document.getElementById("like_"+id).style.color="red";
-		current = parseInt($('#'+id)[0].innerHTML)+1
-		document.getElementById(id).innerHTML = current
-	}
-}
-
-function save(id) {
-	if (document.getElementById("bookmark_" + id).style.color=="royalblue") {
-		document.getElementById("bookmark_" + id).style.color="grey";
-	} else {
-		document.getElementById("bookmark_" + id).style.color="royalblue";
-	}
-}
-</script>
 
 </html>

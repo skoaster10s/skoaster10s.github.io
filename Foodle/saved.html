@@ -101,28 +101,7 @@
 </center>
 </div>
 <br></br>
+
 </body>
-
-<script>
-function like(id) {
-  if (document.getElementById("like_"+id).style.color=="red") {
-    document.getElementById("like_"+id).style.color="grey";
-    current = parseInt($('#'+id)[0].innerHTML)-1
-    document.getElementById(id).innerHTML = current
-  } else {
-    document.getElementById("like_"+id).style.color="red";
-    current = parseInt($('#'+id)[0].innerHTML)+1
-    document.getElementById(id).innerHTML = current
-  }
-}
-
-function save(id) {
-  if (document.getElementById("bookmark_" + id).style.color=="royalblue") {
-    document.getElementById("bookmark_" + id).style.color="grey";
-  } else {
-    document.getElementById("bookmark_" + id).style.color="royalblue";
-  }
-}
-</script>
 
 </html>
