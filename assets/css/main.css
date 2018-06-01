@@ -1,4 +1,3 @@
-@import url(font-awesome.min.css);
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
 
 /*
@@ -2056,7 +2055,7 @@
 
 	#barJava {
 		position: absolute;
-		width: 65%;
+		width: 60%;
 		height: 100%;
 		background-color: #a6a6a6;
 	}
@@ -2070,7 +2069,7 @@
 
 	#barHCJ {
 		position: absolute;
-		width: 40%;
+		width: 50%;
 		height: 100%;
 		background-color: #a6a6a6;
 	}
@@ -2260,20 +2259,19 @@
 		overflow: hidden;
 	}
 
+	#foodle {
+		background-image: url("../../images/foodle.png");
+		background-size: 100% 100%;
+	}
+
+	#fcb {
+		background-image: url("../../images/fcb.jpg");
+		background-size: 100% 100%;
+	}
+
 	#homeBites {
 		background-image: url("../../images/homeBites.jpg");
 		background-size: 100% 100%;
-	}
-
-	#healthyWake {
-		background-image: url("../../images/healthyWake.jpg");
-		background-size: 100% 100%;
-	}
-
-	#tennisTracker {
-		background-image: url("../../images/tennisTracker.jpg");
-		background-size: 100% 100%;
-		
 	}
 
 	#arduinoWave {
@@ -2296,6 +2294,57 @@
 
 	#tennisTracker:hover #tennisContent {
 		max-height: 200px;
+	}
+
+	.overlay-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	.image {
+		display: block;
+		width: 100%;
+		height: 100%;
+		transition: .5s ease;
+		object-fit: cover;
+	}
+
+	.overlay {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		transition: .5s ease;
+		/*background-color: #008CBA;*/
+	}
+
+	.overlay-container:hover .overlay {
+		opacity: 1;
+		cursor: pointer;
+	}
+
+	.overlay-container:hover .image {
+		opacity: 0.2;
+	}
+
+	.text {
+		font-family: "Quicksand";
+		width: 90%;
+		margin: 15% auto;
+		color: white;
+		font-size: 20px;
+		position: relative;
+		text-align: center;
+	}
+
+	.text h {
+		font-size: 30px;
+		font-weight: bold;
 	}
 
 
@@ -2709,13 +2758,14 @@
 		width: 100%;
 	}
 
-		.features li {
-			padding: 4em 4em 2em 6em ;
-			display: block;
-			position: relative;
-			text-align: left;
-			width: 50%;
-		}
+	.features li {
+		padding: 0;
+		display: block;
+		position: relative;
+		text-align: left;
+		width: 50%;
+		max-height: 310px;
+	}
 
 			.features li:nth-child(1) {
 				background-color: rgba(0, 0, 0, 0.035);
@@ -2785,7 +2835,7 @@
 			@media screen and (max-width: 980px) {
 
 				.features li {
-					padding: 3em 2em 1em 2em ;
+					padding: 0;
 					text-align: center;
 				}
 
@@ -2801,7 +2851,7 @@
 			@media screen and (max-width: 736px) {
 
 				.features li {
-					padding: 3em 0 1em 0 ;
+					padding: 0;
 					background-color: transparent !important;
 					border-top: solid 2px #fff;
 					width: 100%;
