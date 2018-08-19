@@ -214,3 +214,107 @@
 			});
 
 })(jQuery);
+
+var valmap = {0: "", 20: "Novice", 40: "Intermediate", 60: "Proficient", 80: "Advanced", 100:"Expert"}
+window.onload = function () {
+
+	var languagesChart = new CanvasJS.Chart("programmingLanguagesChart", {
+		animationEnabled: true,
+		backgroundColor: null,
+		theme: "light2", // "light1", "light2", "dark1", "dark2"
+		title:{
+			text: "Programming Languages",
+			// fontColor: "white",
+			fontSize: 24
+		},
+		axisX: {
+			// labelFontColor: "white",
+			labelFontSize: 16
+		},
+		axisY2: {
+			// labelFontColor: "white",
+			labelFontSize: 16,
+			maximum: 100,
+			interval: 20,
+			labelFormatter: function(e) {
+		        return valmap[e.value];  
+		    }
+		},
+		data: [{
+			type: "bar",
+			axisYType: "secondary",
+			dataPoints: [
+				{ y: 40,  label: "C/C++" },
+				{ y: 50,  label: "HTML/CSS/JS" },
+				{ y: 60,  label: "Java" },
+				{ y: 80, label: "Python" }
+			]
+		}]
+	});
+	languagesChart.render();
+
+	var toolsChart = new CanvasJS.Chart("toolsChart", {
+		animationEnabled: true,
+		backgroundColor: null,
+		theme: "light2", // "light1", "light2", "dark1", "dark2"
+		title:{
+			text: "Tools",
+			// fontColor: "white",
+			fontSize: 24
+		},
+		axisX: {
+			// labelFontColor: "white",
+			labelFontSize: 16
+		},
+		axisY2: {
+			// labelFontColor: "white",
+			labelFontSize: 16,
+			maximum: 100,
+			interval: 20,
+			labelFormatter: function(e) {
+		        return valmap[e.value];  
+		    }
+		},
+		data: [{        
+			type: "bar",
+			axisYType: "secondary",
+			dataPoints: [      
+				{ y: 20, label: "MATLAB" },
+				{ y: 20,  label: "R" }
+			]
+		}]
+	});
+	toolsChart.render();
+
+	var databasesChart = new CanvasJS.Chart("databasesChart", {
+		animationEnabled: true,
+		backgroundColor: null,
+		theme: "light2", // "light1", "light2", "dark1", "dark2"
+		title:{
+			text: "Databases",
+			// fontColor: "white",
+			fontSize: 24
+		},
+		axisX: {
+			// labelFontColor: "white",
+			labelFontSize: 16
+		},
+		axisY2: {
+			// labelFontColor: "white",
+			labelFontSize: 16,
+			maximum: 100,
+			interval: 20,
+			labelFormatter: function(e) {
+		        return valmap[e.value];  
+		    }
+		},
+		data: [{        
+			type: "bar",
+			axisYType: "secondary",
+			dataPoints: [      
+				{ y: 40, label: "MySQL" }
+			]
+		}]
+	});
+	databasesChart.render();
+}

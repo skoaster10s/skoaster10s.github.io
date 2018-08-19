@@ -54,27 +54,116 @@
 			</section>
 
 		<!-- Two -->
-			<section id="two" class="main style2 left dark fullscreen">
+			<section id="two" class="main style3 left dark fullscreen">
 				<div class="content box style2">
 					<header>
 						<h2>Skills</h2>
 					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
-				</div>
+					
+					<div id="programmingLanguagesChart" style="height: 300px; width: 100%;"></div><br>
+					<div id="toolsChart" style="height: 300px; width: 100%;"></div><br>
+					<div id="databasesChart" style="height: 300px; width: 100%;"></div>
+
 				<a href="#three" class="button style2 down anchored">Next</a>
 			</section>
 
-		<!-- Two -->
-			<section id="three" class="main style3 left dark fullscreen">
-				<div class="content box style2">
+		<!-- Three -->
+			<section id="three" class="main style3">
+				<div class="content box style2 wider">
 					<header>
 						<h2>Experience</h2>
 					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+					
+						<table class="experience">
+							<colgroup>
+								<col span="1" style="width: 75%;">
+								<col span="1" style="width: 25%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td align="left"><b>Yext</b><br />
+									Software Engineering Intern<br />
+										<ul>
+											<li>Worked with the Play Framework to make several front-end changes to the Reviews Product and email notifications of the platform</li>
+											<li>Updated endpoints for the Reviews API and Resellers API by adding extra query and result fields </li>
+											<li>Added unit and integration test cases and refactored various components of the code base</li>
+										</ul>
+									</td>
+									<td align="right">New York, NY<br /> 
+									Jun. 2018 - Aug. 2018</td>
+								</tr>
+								<tr>
+									<td align="left"><b>MIT Center for Brains, Minds, and Machines (CBMM)</b><br />
+									Undergraduate Researcher<br />
+										<ul>
+											<li>Working on a project to predict approved answers and rankings for answers to stackexchange questions</li>
+											<li>Writing script to extract relevant features from the stackexchange archives into an organized format to be processed</li>
+											<li>Building a Sequence2Sequence neural network model using PyTorch</li>
+										</ul>
+									</td>
+									<td align="right">Cambridge, MA<br /> 
+									Aug. 2017 - Sept. 2017</td>
+								</tr>
+								<tr>
+									<td align="left"><b>Oracle</b><br />
+									Software Engineering Intern<br />
+										<ul>
+											<li>Wrote a Python script to automate the creation of utilization reports for cloud containers the Data Integration team is using</li>
+											<li>Developed a Java API to securely store credentials through Oracle Platform Security Services</li>
+											<li>Wrote regression test cases for the new Java API and REST API invoking this Java API</li>
+										</ul>
+									</td>
+									<td align="right">Redwood Shores, CA<br /> 
+									Jun. 2017 - Aug. 2017</td>
+								</tr>
+								<tr>
+									<td align="left"><b>Edelman Lab (Harvard-MIT Biomedical Engineering Center)</b><br />
+									Undergraduate Researcher<br />
+										<ul>
+											<li>Part of an ongoing clinical trial seeking to understand the impact and safety of exercise for pregnant women with pre-existing cardiovascular disease</li>
+											<li>Analyzing an automated system in Python that is continuously collecting Fitbit fitness tracker data for possible issues</li>
+											<li>Implementing new features, including the creation of visualizations and metrics using Python’s pandas and matplotlib libraries</li>
+										</ul>
+									</td>
+									<td align="right">Cambridge, MA<br /> 
+									Sept. 2016 - Jan. 2017,<br />
+									Feb. 2017 - May 2017</td>
+								</tr>
+								<tr>
+									<td align="left"><b>MarkLogic</b><br />
+									Product Management Intern<br />
+										<ul>
+											<li>Participated in brainstorming sessions in areas such as cloud computing and noSQL</li>
+											<li>Developed Microsoft Azure Resource Manager Template for deploying a single-node MarkLogic cluster on Azure</li>
+										</ul>
+									</td>
+									<td align="right">San Carlos, CA<br /> 
+									Jan. 2017 - Feb. 2017</td>
+								</tr>
+								<tr>
+									<td align="left"><b>MIT Media Lab Personal Robots Group</b><br />
+									Undergraduate Researcher<br />
+										<ul>
+											<li>Developed a Mechanical Turk-based crowdsource framework where the robot will upload resources it collected from interacting with chilidren (audio/video) and find crowds to annotate on the story being told by the child</li>
+											<li>Incorporated the Affdex SDK with ROS to analyze emotions from a multi-camera setup, allowing the robot to backchannel differently to the emotions a child expressess</li>
+										</ul>
+									</td>
+									<td align="right">Cambridge, MA<br />
+									May 2016 - Aug. 2016</td>
+								</tr>
+<!-- 									<tr>
+									<td align="left"><b>MIT Media Lab Fluid Interfaces Group</b><br />
+									Undergraduate Researcher<br />
+										<ul>
+											<li>Created a GUI and real-time graph, using PyQT, to visualize sensor data (acceleration and rotational velocity) collected from an Arduino Uno being waved to simulate the motion of a waving hand</li>
+										</ul>
+									</td>
+									<td align="right">Cambridge, MA<br />
+									Nov. 2015 - May 2016</td>
+								</tr> -->
+							</tbody>
+						</table>
+
 				</div>
 				<a href="#work" class="button style2 down anchored">Next</a>
 			</section>
@@ -111,18 +200,16 @@
 				<div class="content">
 					<header>
 						<h2>Say Hello.</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
 					</header>
 					<div class="box">
-						<?=$thankYou ?>
-						<form method="post" action="assets/php/contact.php">
+						<form method="post" action="mailto:seanko@mit.edu">
 							<div class="fields">
 								<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
 								<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
 								<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
 							</div>
 							<ul class="actions special">
-								<li><input type="submit" name="submit" value="Send Message" /></li>
+								<li><input type="submit" value="Send Message" /></li>
 							</ul>
 						</form>
 					</div>
@@ -154,8 +241,8 @@
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/canvasjs.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>
