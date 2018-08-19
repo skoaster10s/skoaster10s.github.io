@@ -2259,27 +2259,6 @@
 		overflow: hidden;
 	}
 
-	#foodle {
-		background-image: url("../../images/foodle.jpg");
-		background-size: 100% 100%;
-	}
-
-	#fcb {
-		background-image: url("../../images/fcb.jpg");
-		background-size: 100% 100%;
-	}
-
-	#homeBites {
-		background-image: url("../../images/homeBites.jpg");
-		background-size: 100% 100%;
-	}
-
-	#arduinoWave {
-		background-image: url("../../images/arduinoWave.jpg");
-		background-size: 100% 100%;
-		
-	}
-
 	#homeBites:hover #bitesContent {
 		max-height: 300px;
 	}
