@@ -2230,51 +2230,6 @@
 
 
 /* Projects List */
-
-	#bitesContent {
-		border-radius: 5px;
-		background: rgba(179, 179, 179,  0.7);
-		overflow: hidden;
-	}
-
-	#healthyTitle {
-		color: rgb(255, 128, 255);
-	}
-
-	#healthyContent {
-		border-radius: 5px;
-		background: rgba(179, 179, 179,  0.7);
-		overflow: hidden;
-	}
-
-	#arduinoContent {
-		border-radius: 5px;
-		background: rgba(179, 179, 179,  0.7);
-		overflow: hidden;
-	}
-
-	#tennisContent {
-		border-radius: 5px;
-		background: rgba(179, 179, 179,  0.7);
-		overflow: hidden;
-	}
-
-	#homeBites:hover #bitesContent {
-		max-height: 300px;
-	}
-
-	#healthyWake:hover #healthyContent {
-		max-height: 300px;
-	}
-
-	#arduinoWave:hover #arduinoContent {
-		max-height: 200px;
-	}
-
-	#tennisTracker:hover #tennisContent {
-		max-height: 200px;
-	}
-
 	.overlay-container {
 		position: relative;
 		width: 100%;
