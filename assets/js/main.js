@@ -1,134 +1,320 @@
 /*
-	Spectral by HTML5 UP
+	Big Picture by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-(function(i,s,o,g,r,a,m) {
-	i['GoogleAnalyticsObject']=r;i[r]=i[r]|| function() {
-		(i[r].q=i[r].q||[]).push(arguments)
-	},i[r].l=1*new Date();
-	a=s.createElement(o), m=s.getElementsByTagName(o)[0];
-	a.async=1;
-	a.src=g;
-	m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-89542946-1', 'auto');
-ga('send', 'pageview');
-
-
 (function($) {
 
-	skel
-		.breakpoints({
-			xlarge:	'(max-width: 1680px)',
-			large:	'(max-width: 1280px)',
-			medium:	'(max-width: 980px)',
-			small:	'(max-width: 736px)',
-			xsmall:	'(max-width: 480px)'
+	var	$window = $(window),
+		$body = $('body'),
+		$header = $('#header'),
+		$all = $body.add($header);
+
+	// Breakpoints.
+		breakpoints({
+			xxlarge: [ '1681px',  '1920px' ],
+			xlarge:  [ '1281px',  '1680px' ],
+			large:   [ '1001px',  '1280px' ],
+			medium:  [ '737px',   '1000px' ],
+			small:   [ '481px',   '736px'  ],
+			xsmall:  [ null,      '480px'  ]
 		});
 
-	$(function() {
+	// Play initial animations on page load.
+		$window.on('load', function() {
+			setTimeout(function() {
+				$body.removeClass('is-preload');
+			}, 100);
+		});
 
-		var	$window = $(window),
-			$body = $('body'),
-			$wrapper = $('#page-wrapper'),
-			$banner = $('#banner'),
-			$header = $('#header');
+	// Touch mode.
+		if (browser.mobile)
+			$body.addClass('is-touch');
 
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
+		breakpoints.on('<=small', function() {
+			$body.addClass('is-touch');
+		});
 
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 100);
-			});
+		breakpoints.on('>small', function() {
+			$body.removeClass('is-touch');
+		});
 
-		// Mobile?
-			if (skel.vars.mobile)
-				$body.addClass('is-mobile');
-			else
-				skel
-					.on('-medium !medium', function() {
-						$body.removeClass('is-mobile');
-					})
-					.on('+medium', function() {
-						$body.addClass('is-mobile');
+	// Fix: IE flexbox fix.
+		if (browser.name == 'ie') {
+
+			var $main = $('.main.fullscreen'),
+				IEResizeTimeout;
+
+			$window
+				.on('resize.ie-flexbox-fix', function() {
+
+					clearTimeout(IEResizeTimeout);
+
+					IEResizeTimeout = setTimeout(function() {
+
+						var wh = $window.height();
+
+						$main.each(function() {
+
+							var $this = $(this);
+
+							$this.css('height', '');
+
+							if ($this.height() <= wh)
+								$this.css('height', (wh - 50) + 'px');
+
+						});
+
 					});
 
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
+				})
+				.triggerHandler('resize.ie-flexbox-fix');
 
-		// Prioritize "important" elements on medium.
-			skel.on('+medium -medium', function() {
-				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
-				);
+		}
+
+	// Gallery.
+		$window.on('load', function() {
+
+			var $gallery = $('.gallery');
+
+			$gallery.poptrox({
+				baseZIndex: 10001,
+				useBodyOverflow: false,
+				usePopupEasyClose: false,
+				overlayColor: '#1f2328',
+				overlayOpacity: 0.65,
+				usePopupDefaultStyling: false,
+				usePopupCaption: true,
+				popupLoaderText: '',
+				windowMargin: 50,
+				usePopupNav: true
 			});
 
-		// Scrolly.
-			$('.scrolly')
-				.scrolly({
-					speed: 1500,
-					offset: $header.outerHeight()
+			// Hack: Adjust margins when 'small' activates.
+				breakpoints.on('>small', function() {
+					$gallery.each(function() {
+						$(this)[0]._poptrox.windowMargin = 50;
+					});
 				});
 
-		// Sroll Reveal
-			window.sr = ScrollReveal();
-		    sr.reveal('.sr-icons', {
-		        duration: 600,
-		        scale: 0.3,
-		        distance: '0px'
-		    }, 100);
-		    sr.reveal('.sr-contact', {
-		        duration: 600,
-		        scale: 0.3,
-		        distance: '0px'
-		    }, 80);
-		    sr.reveal('.sr-progress', {
-		        duration: 600
-		    }, 50);
-
-		    sr.reveal('.sr-projects', {
-		        duration: 600
-		    }, 50);
-
-		// Menu.
-			$('#menu')
-				.append('<a href="#menu" class="close"></a>')
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'right',
-					target: $body,
-					visibleClass: 'is-menu-visible'
+				breakpoints.on('<=small', function() {
+					$gallery.each(function() {
+						$(this)[0]._poptrox.windowMargin = 5;
+					});
 				});
 
-		// Header.
-			if (skel.vars.IEVersion < 9)
-				$header.removeClass('alt');
+		});
 
-			if ($banner.length > 0
-			&&	$header.hasClass('alt')) {
+	// Section transitions.
+		if (browser.canUse('transition')) {
 
-				$window.on('resize', function() { $window.trigger('scroll'); });
+			var on = function() {
 
-				$banner.scrollex({
-					bottom:		$header.outerHeight() + 1,
-					terminate:	function() { $header.removeClass('alt'); },
-					enter:		function() { $header.addClass('alt'); },
-					leave:		function() { $header.removeClass('alt'); }
-				});
+				// Galleries.
+					$('.gallery')
+						.scrollex({
+							top:		'30vh',
+							bottom:		'30vh',
+							delay:		50,
+							initialize:	function() { $(this).addClass('inactive'); },
+							terminate:	function() { $(this).removeClass('inactive'); },
+							enter:		function() { $(this).removeClass('inactive'); },
+							leave:		function() { $(this).addClass('inactive'); }
+						});
 
-			}
+				// Generic sections.
+					$('.main.style1')
+						.scrollex({
+							mode:		'middle',
+							delay:		100,
+							initialize:	function() { $(this).addClass('inactive'); },
+							terminate:	function() { $(this).removeClass('inactive'); },
+							enter:		function() { $(this).removeClass('inactive'); },
+							leave:		function() { $(this).addClass('inactive'); }
+						});
 
-	});
+					$('.main.style2')
+						.scrollex({
+							mode:		'middle',
+							delay:		100,
+							initialize:	function() { $(this).addClass('inactive'); },
+							terminate:	function() { $(this).removeClass('inactive'); },
+							enter:		function() { $(this).removeClass('inactive'); },
+							leave:		function() { $(this).addClass('inactive'); }
+						});
+
+				// Contact.
+					$('#contact')
+						.scrollex({
+							top:		'50%',
+							delay:		50,
+							initialize:	function() { $(this).addClass('inactive'); },
+							terminate:	function() { $(this).removeClass('inactive'); },
+							enter:		function() { $(this).removeClass('inactive'); },
+							leave:		function() { $(this).addClass('inactive'); }
+						});
+
+			};
+
+			var off = function() {
+
+				// Galleries.
+					$('.gallery')
+						.unscrollex();
+
+				// Generic sections.
+					$('.main.style1')
+						.unscrollex();
+
+					$('.main.style2')
+						.unscrollex();
+
+				// Contact.
+					$('#contact')
+						.unscrollex();
+
+			};
+
+			breakpoints.on('<=small', off);
+			breakpoints.on('>small', on);
+
+		}
+
+	// Events.
+		var resizeTimeout, resizeScrollTimeout;
+
+		$window
+			.on('resize', function() {
+
+				// Disable animations/transitions.
+					$body.addClass('is-resizing');
+
+				clearTimeout(resizeTimeout);
+
+				resizeTimeout = setTimeout(function() {
+
+					// Update scrolly links.
+						$('a[href^="#"]').scrolly({
+							speed: 1500,
+							offset: $header.outerHeight() - 1
+						});
+
+					// Re-enable animations/transitions.
+						setTimeout(function() {
+							$body.removeClass('is-resizing');
+							$window.trigger('scroll');
+						}, 0);
+
+				}, 100);
+
+			})
+			.on('load', function() {
+				$window.trigger('resize');
+			});
 
 })(jQuery);
+
+var valmap = {0: "", 20: "Novice", 40: "Intermediate", 60: "Proficient", 80: "Advanced", 100:"Expert"}
+window.onload = function () {
+
+	var languagesChart = new CanvasJS.Chart("programmingLanguagesChart", {
+		animationEnabled: true,
+		backgroundColor: null,
+		theme: "light2", // "light1", "light2", "dark1", "dark2"
+		title:{
+			text: "Programming Languages",
+			// fontColor: "white",
+			fontSize: 24
+		},
+		axisX: {
+			// labelFontColor: "white",
+			labelFontSize: 16
+		},
+		axisY2: {
+			// labelFontColor: "white",
+			labelFontSize: 16,
+			maximum: 100,
+			interval: 20,
+			labelFormatter: function(e) {
+		        return valmap[e.value];  
+		    }
+		},
+		data: [{
+			type: "bar",
+			axisYType: "secondary",
+			dataPoints: [
+				{ y: 40,  label: "C/C++" },
+				{ y: 50,  label: "HTML/CSS/JS" },
+				{ y: 60,  label: "Java" },
+				{ y: 80, label: "Python" }
+			]
+		}]
+	});
+	languagesChart.render();
+
+	var toolsChart = new CanvasJS.Chart("toolsChart", {
+		animationEnabled: true,
+		backgroundColor: null,
+		theme: "light2", // "light1", "light2", "dark1", "dark2"
+		title:{
+			text: "Tools",
+			// fontColor: "white",
+			fontSize: 24
+		},
+		axisX: {
+			// labelFontColor: "white",
+			labelFontSize: 16
+		},
+		axisY2: {
+			// labelFontColor: "white",
+			labelFontSize: 16,
+			maximum: 100,
+			interval: 20,
+			labelFormatter: function(e) {
+		        return valmap[e.value];  
+		    }
+		},
+		data: [{        
+			type: "bar",
+			axisYType: "secondary",
+			dataPoints: [      
+				{ y: 20, label: "MATLAB" },
+				{ y: 20,  label: "R" }
+			]
+		}]
+	});
+	toolsChart.render();
+
+	var databasesChart = new CanvasJS.Chart("databasesChart", {
+		animationEnabled: true,
+		backgroundColor: null,
+		theme: "light2", // "light1", "light2", "dark1", "dark2"
+		title:{
+			text: "Databases",
+			// fontColor: "white",
+			fontSize: 24
+		},
+		axisX: {
+			// labelFontColor: "white",
+			labelFontSize: 16
+		},
+		axisY2: {
+			// labelFontColor: "white",
+			labelFontSize: 16,
+			maximum: 100,
+			interval: 20,
+			labelFormatter: function(e) {
+		        return valmap[e.value];  
+		    }
+		},
+		data: [{        
+			type: "bar",
+			axisYType: "secondary",
+			dataPoints: [      
+				{ y: 40, label: "MySQL" }
+			]
+		}]
+	});
+	databasesChart.render();
+}
